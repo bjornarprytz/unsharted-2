@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdqjsqe31jql2"]
+[gd_scene load_steps=3 format=3 uid="uid://cdqjsqe31jql2"]
+
+[ext_resource type="PackedScene" uid="uid://dhgh2cea5xa1y" path="res://object/the_poop.tscn" id="1_4fu6l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6qvjl"]
 size = Vector2(202, 681)
@@ -11,20 +13,39 @@ size = Vector2(202, 681)
 position = Vector2(350, 157)
 shape = SubResource("RectangleShape2D_6qvjl")
 
+[node name="ColorRect" type="ColorRect" parent="LeftWall"]
+offset_left = 410.0
+offset_top = -7.0
+offset_right = 450.0
+offset_bottom = 495.0
+
 [node name="RightWall" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
 position = Vector2(826, 155)
 shape = SubResource("RectangleShape2D_6qvjl")
 
+[node name="ColorRect2" type="ColorRect" parent="RightWall"]
+offset_left = 725.0
+offset_top = -5.0
+offset_right = 765.0
+offset_bottom = 497.0
+
 [node name="LeftBottom" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LeftBottom"]
 polygon = PackedVector2Array(442, 480, 488, 534, 577, 568, 444, 543)
 
+[node name="Polygon2D" type="Polygon2D" parent="LeftBottom"]
+polygon = PackedVector2Array(442, 480, 488, 534, 577, 568, 444, 543)
+
 [node name="RightBottom" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RightBottom"]
+position = Vector2(242, 0)
+polygon = PackedVector2Array(434, 544, 488, 481, 499, 551, 379, 565)
+
+[node name="Polygon2D" type="Polygon2D" parent="RightBottom"]
 position = Vector2(242, 0)
 polygon = PackedVector2Array(434, 544, 488, 481, 499, 551, 379, 565)
 
@@ -35,3 +56,6 @@ offset_right = 735.0
 offset_bottom = 228.0
 bbcode_enabled = true
 text = "[rainbow]Hello World"
+
+[node name="ThePoop" parent="." instance=ExtResource("1_4fu6l")]
+position = Vector2(590, 76)

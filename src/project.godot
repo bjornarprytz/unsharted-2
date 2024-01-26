@@ -24,6 +24,10 @@ window/stretch/mode="viewport"
 
 project/assembly_name="Unsharted2"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/softbody2d/plugin.cfg")
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
