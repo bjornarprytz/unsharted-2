@@ -1,3 +1,37 @@
-[gd_scene format=3 uid="uid://cdqjsqe31jql2"]
+[gd_scene load_steps=2 format=3 uid="uid://cdqjsqe31jql2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6qvjl"]
+size = Vector2(202, 681)
 
 [node name="Node2D" type="Node2D"]
+
+[node name="LeftWall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
+position = Vector2(350, 157)
+shape = SubResource("RectangleShape2D_6qvjl")
+
+[node name="RightWall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
+position = Vector2(826, 155)
+shape = SubResource("RectangleShape2D_6qvjl")
+
+[node name="LeftBottom" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LeftBottom"]
+polygon = PackedVector2Array(442, 480, 488, 534, 577, 568, 444, 543)
+
+[node name="RightBottom" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RightBottom"]
+position = Vector2(242, 0)
+polygon = PackedVector2Array(434, 544, 488, 481, 499, 551, 379, 565)
+
+[node name="HelloWorld" type="RichTextLabel" parent="."]
+offset_left = 524.0
+offset_top = 149.0
+offset_right = 735.0
+offset_bottom = 228.0
+bbcode_enabled = true
+text = "[rainbow]Hello World"
