@@ -105,3 +105,13 @@ gravity_direction = Vector2(0, -10)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gas"]
 position = Vector2(4, 5.0625)
 shape = SubResource("RectangleShape2D_s4dj0")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 60.0
+offset_top = 70.0
+offset_right = 296.0
+offset_bottom = 391.0
+text = "Controls
+
+A/D : Left/Right
+Space: Downward smash"

@@ -8,7 +8,6 @@ extends Node2D
 func _ready() -> void:
 	spawn_area.get_rect()
 
-
 const spawn_interval : float = .69
 
 var spawn_timer := 0.0

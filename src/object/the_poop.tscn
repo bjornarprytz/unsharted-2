@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://dhgh2cea5xa1y"]
 
 [ext_resource type="Script" path="res://object/the_poop.gd" id="1_bgfqd"]
-[ext_resource type="Texture2D" uid="uid://dpb5swidemuk0" path="res://assets/poop.png" id="1_kc1qs"]
+[ext_resource type="Texture2D" uid="uid://blehrxgd67g1n" path="res://assets/T_poo_small.png" id="2_7t50d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1w8d7"]
-radius = 51.0098
+radius = 46.0977
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mnn0d"]
-radius = 54.0
+radius = 74.0068
 
 [node name="Poop" type="RigidBody2D"]
 collision_layer = 3
@@ -18,7 +18,8 @@ script = ExtResource("1_bgfqd")
 shape = SubResource("CircleShape2D_1w8d7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_kc1qs")
+scale = Vector2(0.183594, 0.183594)
+texture = ExtResource("2_7t50d")
 
 [node name="DetectionArea" type="Area2D" parent="."]
 collision_layer = 2
