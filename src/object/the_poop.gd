@@ -1,10 +1,11 @@
 extends RigidBody2D
 
 @onready var detection_area : Area2D = $DetectionArea
-
 @onready var target_scale : Vector2 = scale
-
+@onready var chunk_spawnr : PackedScene = preload("res://object/chunk.tscn")
 const force : float = 300.0
+
+var size: int = 0
 
 func _input(event: InputEvent) -> void:
 	if (event is InputEventKey and event.keycode == KEY_SPACE and event.is_pressed()):
@@ -16,7 +17,7 @@ func _input(event: InputEvent) -> void:
 		apply_impulse(Vector2.RIGHT * force)
 
 func _physics_process(delta: float) -> void:
-	scale = scale.move_toward(target_scale, delta)
+	pass
 
 func _on_detection_area_area_entered(area: Area2D) -> void:
 	var thing = area.owner
@@ -26,3 +27,15 @@ func _on_detection_area_area_entered(area: Area2D) -> void:
 		target_scale += (Vector2.ONE * .1)
 		tween.tween_callback(thing.queue_free)
 		Global.PoopConsumed.emit()
+		_increase_size()
+
+func _increase_size():
+	size += 1
+	target_scale += Vector2.ONE * 0.05
+	print(target_scale)
+	scale += (Vector2.ONE * .1)
+	
+	if (size % 5 == 0):
+		add_chunk()
+func add_chunk():
+	var chunk = chunk_spawnr.instantiate()

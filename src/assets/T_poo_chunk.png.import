@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ng1h41fjxepi"
-path="res://.godot/imported/small_poo.png-59306b4b0d86363bf8bf1779e4741297.ctex"
+uid="uid://dkuw5haa05tr1"
+path="res://.godot/imported/T_poo_chunk.png-16eeac2972fea8fc7b8e92cb24618eca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/small_poo.png"
-dest_files=["res://.godot/imported/small_poo.png-59306b4b0d86363bf8bf1779e4741297.ctex"]
+source_file="res://assets/T_poo_chunk.png"
+dest_files=["res://.godot/imported/T_poo_chunk.png-16eeac2972fea8fc7b8e92cb24618eca.ctex"]
 
 [params]
 

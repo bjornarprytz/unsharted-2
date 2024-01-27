@@ -4,6 +4,7 @@ extends Node2D
 
 @onready var spawn_area : ColorRect = $MiniPoopSpawn
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	spawn_area.get_rect()
@@ -17,8 +18,8 @@ func _process(delta: float) -> void:
 	
 	if (spawn_timer > spawn_interval):
 		var mini_poop = poop_spawner.instantiate() as MiniPoop
-		add_child(mini_poop)
 		mini_poop.position = _get_random_spawn_point()
+		add_child(mini_poop)
 		spawn_timer = 0.0
 
 func _get_random_spawn_point() -> Vector2:
