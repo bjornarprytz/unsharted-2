@@ -21,7 +21,7 @@ void fragment() {
 	float v = dot(c, vec4(0.33333, 0.33333, 0.33333,0.33333));
 	v = sqrt(v);
 	
-	float f = 1.0 / fps;
+	float f =  (1.0 / fps);
 	float g = make_grain(TIME - mod(TIME, f), UV);
 	g = max(g, make_grain(TIME - mod(TIME, f) + f, UV) * 0.5);
 	g = max(g, make_grain(TIME - mod(TIME, f) + f * 2.0, UV) * 0.25);
