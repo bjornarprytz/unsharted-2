@@ -1,11 +1,9 @@
 extends Label
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	Global.ScoreUpdated.connect(_on_ScoreUpdated.bind())
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _on_ScoreUpdated(new_score : int):
+	var score = new_score
+	self.text = "Score: " + var_to_str(score)

@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cdqjsqe31jql2"]
+[gd_scene load_steps=10 format=3 uid="uid://cdqjsqe31jql2"]
 
 [ext_resource type="PackedScene" uid="uid://dhgh2cea5xa1y" path="res://object/the_poop.tscn" id="1_4fu6l"]
 [ext_resource type="Script" path="res://main.gd" id="1_rtgrn"]
-[ext_resource type="Texture2D" uid="uid://d3u25a58keqjl" path="res://assets/background.png" id="2_ce6sq"]
+[ext_resource type="Texture2D" uid="uid://du3osifw3e1eq" path="res://assets/background.png" id="2_ce6sq"]
 [ext_resource type="PackedScene" uid="uid://qgjhw8r2elro" path="res://object/gas.tscn" id="4_60dpx"]
+[ext_resource type="Script" path="res://object/PoopCounter.gd" id="5_ls5re"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6qvjl"]
 size = Vector2(43, 753)
@@ -107,3 +108,10 @@ collision_layer = 8
 position = Vector2(-4, -21.25)
 shape = SubResource("RectangleShape2D_sbbo6")
 one_way_collision_margin = 50.0
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 883.0
+offset_top = 129.0
+offset_right = 1053.0
+offset_bottom = 258.0
+script = ExtResource("5_ls5re")
