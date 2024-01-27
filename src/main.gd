@@ -14,7 +14,6 @@ const spawn_interval : float = .69
 var spawn_timer := 0.0
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
 	spawn_timer += delta
 	
 	if (spawn_timer > spawn_interval):

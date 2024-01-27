@@ -15,6 +15,10 @@ run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://autoload/global.tscn"
+
 [display]
 
 window/size/resizable=false
@@ -27,6 +31,10 @@ project/assembly_name="Unsharted2"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/softbody2d/plugin.cfg")
+
+[layer_names]
+
+2d_physics/layer_3="wall"
 
 [rendering]
 

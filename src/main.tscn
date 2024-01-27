@@ -1,15 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdqjsqe31jql2"]
+[gd_scene load_steps=6 format=3 uid="uid://cdqjsqe31jql2"]
 
 [ext_resource type="PackedScene" uid="uid://dhgh2cea5xa1y" path="res://object/the_poop.tscn" id="1_4fu6l"]
 [ext_resource type="Script" path="res://main.gd" id="1_rtgrn"]
+[ext_resource type="Script" path="res://OutsideWorld.gd" id="3_v7gnd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6qvjl"]
-size = Vector2(43, 504.5)
+size = Vector2(43, 500.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s4dj0"]
+size = Vector2(269.5, 145.25)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_rtgrn")
 
 [node name="LeftWall" type="StaticBody2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
 position = Vector2(429.5, 245.25)
@@ -22,9 +27,10 @@ offset_right = 450.0
 offset_bottom = 495.0
 
 [node name="RightWall" type="StaticBody2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
-position = Vector2(745, 244)
+position = Vector2(745, 246.125)
 shape = SubResource("RectangleShape2D_6qvjl")
 
 [node name="ColorRect2" type="ColorRect" parent="RightWall"]
@@ -34,6 +40,7 @@ offset_right = 765.0
 offset_bottom = 497.0
 
 [node name="LeftBottom" type="StaticBody2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LeftBottom"]
 polygon = PackedVector2Array(442, 480, 488, 534, 577, 568, 577, 607, 444, 543)
@@ -42,6 +49,7 @@ polygon = PackedVector2Array(442, 480, 488, 534, 577, 568, 577, 607, 444, 543)
 polygon = PackedVector2Array(442, 480, 488, 534, 577, 568, 577, 607, 444, 543)
 
 [node name="RightBottom" type="StaticBody2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RightBottom"]
 position = Vector2(242, 0)
@@ -52,7 +60,7 @@ position = Vector2(242, 0)
 polygon = PackedVector2Array(434, 544, 488, 481, 499, 551, 379, 603, 379, 565)
 
 [node name="ThePoop" parent="." instance=ExtResource("1_4fu6l")]
-position = Vector2(580, 4)
+position = Vector2(589, 79)
 
 [node name="MiniPoopSpawn" type="ColorRect" parent="."]
 offset_left = 454.0
@@ -61,3 +69,24 @@ offset_right = 721.0
 offset_bottom = -5.0
 mouse_filter = 2
 color = Color(1, 1, 1, 0)
+
+[node name="OutsideWorld" type="Node2D" parent="."]
+script = ExtResource("3_v7gnd")
+
+[node name="Control" type="Control" parent="OutsideWorld"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 802.0
+offset_top = 427.0
+offset_right = 1087.0
+offset_bottom = 584.0
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(311, 275)
+gravity_space_override = 3
+gravity_point_center = Vector2(0, -10)
+gravity_direction = Vector2(0, -10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(275.75, 219.625)
+shape = SubResource("RectangleShape2D_s4dj0")
