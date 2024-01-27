@@ -8,7 +8,7 @@ extends Area2D
 
 
 func _ready() -> void:
-	Global.PoopConsumed.connect(_change_height.bind(1.0))
+	Global.PoopConsumed.connect(_change_height.bind(10.0))
 
 func _change_height(amount: float):
 	shape.position.y -= (amount / 2.0)
