@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://qgjhw8r2elro"]
+[gd_scene load_steps=9 format=3 uid="uid://qgjhw8r2elro"]
 
 [ext_resource type="Script" path="res://object/gas.gd" id="1_po5np"]
 [ext_resource type="Shader" path="res://Shaders/gas_shader.gdshader" id="2_34w04"]
@@ -6,36 +6,37 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s4dj0"]
 size = Vector2(269.5, 52.125)
 
-[sub_resource type="Gradient" id="Gradient_trv73"]
-
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_j0800"]
-noise_type = 0
+noise_type = 3
 domain_warp_enabled = true
-domain_warp_type = 2
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_f74uo"]
-width = 1024
-height = 1024
-color_ramp = SubResource("Gradient_trv73")
+width = 4096
+height = 4096
+seamless = true
+seamless_blend_skirt = 1.0
 noise = SubResource("FastNoiseLite_j0800")
 
 [sub_resource type="Gradient" id="Gradient_3n5mb"]
-offsets = PackedFloat32Array(0.557377, 0.918033)
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.186544, 0.975535)
 colors = PackedColorArray(0.854167, 0.854167, 0.854167, 1, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_272jp"]
 gradient = SubResource("Gradient_3n5mb")
+width = 512
+height = 512
 fill = 1
 fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.95, 0.05)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_41ydv"]
 shader = ExtResource("2_34w04")
-shader_parameter/base = Color(0.388235, 0.709804, 0.247059, 0.686275)
-shader_parameter/fps = 8.0
-shader_parameter/grain_strength = 0.4
+shader_parameter/base = Color(0.596078, 0.901961, 0.466667, 0.917647)
+shader_parameter/fps = 30.0
+shader_parameter/PanY = 0.025
+shader_parameter/PanX = 0.0
+shader_parameter/grain_strength = 0.3
 shader_parameter/stretch = 0.5
-shader_parameter/flashing = 0.025
 shader_parameter/grain = SubResource("NoiseTexture2D_f74uo")
 shader_parameter/vignette = SubResource("GradientTexture2D_272jp")
 
@@ -52,15 +53,10 @@ shape = SubResource("RectangleShape2D_s4dj0")
 
 [node name="Visual" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_41ydv")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
 offset_left = -131.0
 offset_top = -21.0
 offset_right = 139.0
 offset_bottom = 31.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

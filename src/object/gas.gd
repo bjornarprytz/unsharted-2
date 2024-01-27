@@ -8,7 +8,7 @@ extends Area2D
 
 
 func _ready() -> void:
-	Global.PoopConsumed.connect(_change_height.bind(1.0))
+	Global.PoopConsumed.connect(_change_height.bind(10.0))
 
 func _change_height(amount: float):
 	shape.position.y -= (amount / 2.0)
@@ -16,9 +16,7 @@ func _change_height(amount: float):
 	visual.position.y -= amount
 	visual.size.y += amount
 
-
-
-func _on_body_entered(body: RigidBody2D):
+func _on_body_entered(body):
 	if body.name == "ThePoop":
 		body.add_constant_force(Vector2.UP * bounce_force)
 
