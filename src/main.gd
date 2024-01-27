@@ -20,8 +20,6 @@ func _process(delta: float) -> void:
 		add_child(mini_poop)
 		mini_poop.position = _get_random_spawn_point()
 		spawn_timer = 0.0
-		
-
 
 func _get_random_spawn_point() -> Vector2:
 	var low_x = spawn_area.get_rect().position.x

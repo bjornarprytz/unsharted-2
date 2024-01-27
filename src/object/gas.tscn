@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlu4ixapsk1iw"]
+
+[ext_resource type="Script" path="res://object/gas.gd" id="1_po5np"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s4dj0"]
+size = Vector2(269.5, 52.125)
+
+[node name="Gas" type="Area2D"]
+position = Vector2(585, 553)
+gravity_space_override = 3
+gravity_point_center = Vector2(0, -10)
+gravity_direction = Vector2(0, -10)
+script = ExtResource("1_po5np")
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+position = Vector2(4, 5.0625)
+shape = SubResource("RectangleShape2D_s4dj0")
+
+[node name="Visual" type="ColorRect" parent="."]
+offset_left = -112.0
+offset_top = -21.0
+offset_right = 120.0
+offset_bottom = 31.0
+color = Color(0.717647, 0.964706, 0.647059, 0.470588)

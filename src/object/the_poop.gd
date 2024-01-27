@@ -25,3 +25,4 @@ func _on_detection_area_area_entered(area: Area2D) -> void:
 		tween.tween_property(thing, "modulate:a", 0.0, .5)
 		target_scale += (Vector2.ONE * .1)
 		tween.tween_callback(thing.queue_free)
+		Global.PoopConsumed.emit()

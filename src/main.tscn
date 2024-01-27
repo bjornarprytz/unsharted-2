@@ -3,12 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://dhgh2cea5xa1y" path="res://object/the_poop.tscn" id="1_4fu6l"]
 [ext_resource type="Script" path="res://main.gd" id="1_rtgrn"]
 [ext_resource type="Script" path="res://OutsideWorld.gd" id="3_v7gnd"]
+[ext_resource type="PackedScene" uid="uid://dlu4ixapsk1iw" path="res://object/gas.tscn" id="4_60dpx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6qvjl"]
 size = Vector2(43, 500.25)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s4dj0"]
-size = Vector2(269.5, 52.125)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_rtgrn")
@@ -96,22 +94,7 @@ offset_top = 414.0
 offset_right = 1027.0
 offset_bottom = 562.0
 
-[node name="Gas" type="Area2D" parent="."]
-position = Vector2(585, 553)
-gravity_space_override = 3
-gravity_point_center = Vector2(0, -10)
-gravity_direction = Vector2(0, -10)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gas"]
-position = Vector2(4, 5.0625)
-shape = SubResource("RectangleShape2D_s4dj0")
-
-[node name="ColorRect" type="ColorRect" parent="Gas"]
-offset_left = -112.0
-offset_top = -21.0
-offset_right = 120.0
-offset_bottom = 31.0
-color = Color(0.717647, 0.964706, 0.647059, 0.470588)
+[node name="Gas" parent="." instance=ExtResource("4_60dpx")]
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = 60.0
