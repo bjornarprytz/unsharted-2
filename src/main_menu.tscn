@@ -1,10 +1,102 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2mlb2ngd4rr0"]
+[gd_scene load_steps=21 format=3 uid="uid://c2mlb2ngd4rr0"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_307pf"]
-[ext_resource type="AudioStream" uid="uid://bn03sabur8fb6" path="res://assets/unsharted2.wav" id="2_15xlf"]
+[ext_resource type="AudioStream" uid="uid://cy56exs2wvm8p" path="res://assets/unsharted2.wav" id="2_15xlf"]
+[ext_resource type="FontFile" uid="uid://bmshoge7tib7u" path="res://assets/fonts/HalloweenSlime.otf" id="3_d4j24"]
+[ext_resource type="Texture2D" uid="uid://cxrjf3jc73tr7" path="res://assets/keys/A_Key_Light.png" id="4_fs6yj"]
+[ext_resource type="Texture2D" uid="uid://cthaq0md6lrmj" path="res://assets/keys/Space_Key_Light.png" id="4_tdmsu"]
+[ext_resource type="Texture2D" uid="uid://cphamexapy0e7" path="res://assets/keys/D_Key_Light.png" id="5_0npd0"]
+[ext_resource type="Texture2D" uid="uid://djvc51wewqqkl" path="res://assets/keys/S_Key_Light.png" id="5_hgoo0"]
+[ext_resource type="Texture2D" uid="uid://dpl7l5dxpj547" path="res://assets/spritemaps/smallidle.png" id="8_c2u7d"]
+[ext_resource type="Texture2D" uid="uid://bkjw8ojs10jfn" path="res://assets/spritemaps/T_poo_small_munch.png" id="8_luig8"]
+[ext_resource type="Texture2D" uid="uid://7tmasvgif5ux" path="res://assets/T_poo_chunk.png" id="9_ncj00"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0kg3b"]
+atlas = ExtResource("8_c2u7d")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3dk3"]
+atlas = ExtResource("8_c2u7d")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4x3rw"]
+atlas = ExtResource("8_c2u7d")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7nq3"]
+atlas = ExtResource("8_luig8")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fiiyo"]
+atlas = ExtResource("8_luig8")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqcob"]
+atlas = ExtResource("8_luig8")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t634n"]
+atlas = ExtResource("8_luig8")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7a465"]
+atlas = ExtResource("8_luig8")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6srs"]
+atlas = ExtResource("8_luig8")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_amjty"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0kg3b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g3dk3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4x3rw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0kg3b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7nq3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fiiyo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqcob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t634n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7a465")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6srs")
+}],
+"loop": true,
+"name": &"Default",
+"speed": 6.0
+}]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_307pf")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_15xlf")
+autoplay = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.415686, 0.52549, 0.258824, 1)
+metadata/_edit_lock_ = true
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -14,37 +106,106 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -276.0
-offset_top = -160.0
-offset_right = 276.0
-offset_bottom = -48.0
+offset_left = -480.0
+offset_top = -296.0
+offset_right = 488.0
+offset_bottom = 80.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 80
+theme_override_fonts/normal_font = ExtResource("3_d4j24")
+theme_override_font_sizes/normal_font_size = 200
 bbcode_enabled = true
-text = "[color=white]UN[color=brown]SHART[color=white]ED [color=brown]2[/color]"
+text = "[center][color=white]UN[color=brown]SHART[color=white]ED [color=brown]
+2[/color]"
 
-[node name="StartText" type="RichTextLabel" parent="UI"]
-anchors_preset = 8
+[node name="HBoxContainer4" type="HBoxContainer" parent="UI"]
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -156.0
-offset_top = 76.0
-offset_right = 152.0
-offset_bottom = 124.0
+anchor_bottom = 1.0
+offset_left = -150.5
+offset_top = -220.0
+offset_right = 150.5
+offset_bottom = -120.0
 grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 30
-bbcode_enabled = true
-text = "[color=white]Press [color=brown]SPACE[color=white] to start![/color]"
+grow_vertical = 0
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1280.0
-offset_bottom = 720.0
-color = Color(0.415686, 0.52549, 0.258824, 1)
+[node name="StartLabel1" type="Label" parent="UI/HBoxContainer4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Press"
+horizontal_alignment = 1
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_15xlf")
-autoplay = true
+[node name="Space_key" type="TextureRect" parent="UI/HBoxContainer4"]
+layout_mode = 2
+texture = ExtResource("4_tdmsu")
+
+[node name="StartLabel2" type="Label" parent="UI/HBoxContainer4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "to start!"
+horizontal_alignment = 1
+
+[node name="Controls" type="VBoxContainer" parent="UI"]
+offset_top = 280.0
+offset_right = 368.0
+offset_bottom = 588.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Controls"]
+layout_mode = 2
+
+[node name="A_key" type="TextureRect" parent="UI/Controls/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_fs6yj")
+
+[node name="Label" type="Label" parent="UI/Controls/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "- Move left"
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI/Controls"]
+layout_mode = 2
+
+[node name="D_key" type="TextureRect" parent="UI/Controls/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("5_0npd0")
+
+[node name="Label" type="Label" parent="UI/Controls/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "- Move right
+"
+horizontal_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="UI/Controls"]
+layout_mode = 2
+
+[node name="S_key" type="TextureRect" parent="UI/Controls/HBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("5_hgoo0")
+
+[node name="Label" type="Label" parent="UI/Controls/HBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "- Smash down and release"
+horizontal_alignment = 1
+
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="UI"]
+position = Vector2(952, 380)
+sprite_frames = SubResource("SpriteFrames_amjty")
+animation = &"Default"
+autoplay = "Default"
+
+[node name="ChunkSprite" type="Sprite2D" parent="UI"]
+position = Vector2(1120, 384)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("9_ncj00")
+
+[node name="Explanation" type="Label" parent="UI"]
+offset_left = 896.0
+offset_top = 444.0
+offset_right = 1205.0
+offset_bottom = 467.0
+text = "Eat the chunks to grow and produce gas"
