@@ -2,9 +2,13 @@
 
 ## TODO
 
-- Make the shit work
+### Bugs
 
-- Push release with `./push_release.sh`
+- Scaling SoftBody is a bit tricky
+
+### Deploy
+
+- Push web build to itch.io with `./push_release.sh`
 
 ### Extra
 
