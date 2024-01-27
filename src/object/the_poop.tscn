@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://dhgh2cea5xa1y"]
+[gd_scene load_steps=36 format=3 uid="uid://dhgh2cea5xa1y"]
 
 [ext_resource type="Script" path="res://object/the_poop.gd" id="1_bgfqd"]
 [ext_resource type="Texture2D" uid="uid://dpl7l5dxpj547" path="res://assets/spritemaps/smallidle.png" id="2_5b7o5"]
@@ -7,11 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://b1aylj8fbjpx7" path="res://assets/spritemaps/medium_poo_idle.png" id="4_6j63c"]
 [ext_resource type="Texture2D" uid="uid://duppuuqt36dfp" path="res://assets/spritemaps/smallsmash_impact.png" id="4_kxdg8"]
 [ext_resource type="Texture2D" uid="uid://do8fl48025w5h" path="res://assets/spritemaps/smallsmash_windup.png" id="6_6ucfl"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="8_t0ey7"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/parallel_state.gd" id="9_hgjs6"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/compound_state.gd" id="10_jlfwb"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/atomic_state.gd" id="11_rwbsi"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/transition.gd" id="12_alwc2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u6mfj"]
 atlas = ExtResource("2_nk72p")
@@ -261,80 +256,4 @@ gravity = 69000.0
 position = Vector2(-0.443184, 0)
 polygon = PackedVector2Array(-42, -27, -37, -33, -26, -40, -17, -44, 13, -43, 28, -27, 34.081, -21.3873, 38, -17, 46, -1, 45, 9, 38, 26, 32, 32, 16, 43, 8, 44, -3, 44, -12, 42, -22, 37, -29, 30, -33, 23, -38, 11)
 
-[node name="StateChart" type="Node" parent="."]
-script = ExtResource("8_t0ey7")
-
-[node name="Root" type="Node" parent="StateChart"]
-script = ExtResource("9_hgjs6")
-
-[node name="Size" type="Node" parent="StateChart/Root"]
-script = ExtResource("10_jlfwb")
-initial_state = NodePath("Small")
-
-[node name="Small" type="Node" parent="StateChart/Root/Size"]
-script = ExtResource("11_rwbsi")
-
-[node name="Idle" type="Node" parent="StateChart/Root/Size/Small"]
-script = ExtResource("12_alwc2")
-to = NodePath("..")
-event = &"idle"
-
-[node name="Fall" type="Node" parent="StateChart/Root/Size/Small"]
-script = ExtResource("12_alwc2")
-to = NodePath("..")
-event = &"fall"
-
-[node name="Windup" type="Node" parent="StateChart/Root/Size/Small"]
-script = ExtResource("12_alwc2")
-to = NodePath("..")
-event = &"windup"
-
-[node name="Impact" type="Node" parent="StateChart/Root/Size/Small"]
-script = ExtResource("12_alwc2")
-to = NodePath("..")
-event = &"impact"
-
-[node name="Munch" type="Node" parent="StateChart/Root/Size/Small"]
-script = ExtResource("12_alwc2")
-to = NodePath("..")
-event = &"munch"
-
-[node name="ToMedium" type="Node" parent="StateChart/Root/Size/Small"]
-script = ExtResource("12_alwc2")
-to = NodePath("../../Medium")
-event = &"to_medium"
-
-[node name="Medium" type="Node" parent="StateChart/Root/Size"]
-script = ExtResource("11_rwbsi")
-
-[node name="Idle" type="Node" parent="StateChart/Root/Size/Medium"]
-script = ExtResource("12_alwc2")
-to = NodePath("..")
-event = &"idle"
-
-[node name="Fall" type="Node" parent="StateChart/Root/Size/Medium"]
-script = ExtResource("12_alwc2")
-to = NodePath("..")
-event = &"fall"
-
-[node name="Windup" type="Node" parent="StateChart/Root/Size/Medium"]
-script = ExtResource("12_alwc2")
-to = NodePath("..")
-event = &"windup"
-
-[node name="Impact" type="Node" parent="StateChart/Root/Size/Medium"]
-script = ExtResource("12_alwc2")
-to = NodePath("..")
-event = &"impact"
-
-[node name="Munch" type="Node" parent="StateChart/Root/Size/Medium"]
-script = ExtResource("12_alwc2")
-to = NodePath("..")
-event = &"munch"
-
 [connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]
-[connection signal="taken" from="StateChart/Root/Size/Small/Idle" to="." method="_on_small_idle_taken"]
-[connection signal="taken" from="StateChart/Root/Size/Small/Fall" to="." method="_on_fall_taken"]
-[connection signal="taken" from="StateChart/Root/Size/Small/Windup" to="." method="_on_windup_taken"]
-[connection signal="taken" from="StateChart/Root/Size/Small/Impact" to="." method="_on_impact_taken"]
-[connection signal="taken" from="StateChart/Root/Size/Small/Munch" to="." method="_on_munch_taken"]

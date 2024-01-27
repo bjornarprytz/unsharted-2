@@ -6,8 +6,6 @@ extends RigidBody2D
 @onready var detection_shape : Node2D = $DetectionArea/Shape
 @onready var poop_shape : Node2D = $Shape
 
-@onready var state_chart : StateChart = $StateChart
-
 const force : float = 1000.0
 
 var size: int = 0
@@ -17,6 +15,9 @@ func _physics_process(delta):
 	animation.scale = animation.scale.move_toward(target_scale, delta)
 	detection_shape.scale = detection_shape.scale.move_toward(target_scale, delta)
 	poop_shape.scale = poop_shape.scale.move_toward(target_scale, delta)
+	
+	if !animation.is_playing():
+		animation.play("Idle" + _animation_postfix())
 	
 	if Input.is_action_pressed("left"):
 		apply_force(Vector2.LEFT * force * delta)
@@ -32,14 +33,14 @@ func _input(event: InputEvent) -> void:
 			sleeping = true
 			var tween = create_tween()
 			tween.tween_property(self, "rotation", 0.0, 0.3)
-			state_chart.send_event("windup")
+			animation.play("Windup"+_animation_postfix())
 			await animation.animation_finished
 			if aborted_smash:
 				aborted_smash = false
 				sleeping = false
 				return
 			apply_impulse(Vector2.DOWN * 20.0)
-			state_chart.send_event("fall")
+			animation.play("Fall"+_animation_postfix())
 			await animation.animation_finished
 			pass
 		else:
@@ -50,7 +51,7 @@ func _input(event: InputEvent) -> void:
 func _on_detection_area_area_entered(area: Area2D) -> void:
 	var thing = area.owner
 	if thing is MiniPoop:
-		state_chart.send_event("munch")
+		animation.play("Munch"+_animation_postfix())
 		var tween = create_tween()
 		target_scale += (Vector2.ONE * .02)
 		tween.tween_property(thing, "modulate:a", 0.0, .5)
@@ -60,6 +61,12 @@ func _on_detection_area_area_entered(area: Area2D) -> void:
 		if (target_scale.x > 1.2):
 			pass
 
+func _animation_postfix() -> String:
+	if (target_scale.x > 1.2):
+		return "_Medium"
+	else:
+		return ""
+
 func fart():
 	pass
 	# Clear out the gas
@@ -67,18 +74,3 @@ func fart():
 	# Eject Poop (disable anus)
 	# If player is ejected, game over
 	# Otherwise, close anus and resume
-
-func _on_small_idle_taken() -> void:
-	animation.play("Idle")
-
-func _on_small_fall_taken() -> void:
-	animation.play("Fall")
-
-func _on_small_windup_taken() -> void:
-	animation.play("Windup")
-
-func _on_small_impact_taken() -> void:
-	animation.play("Impact")
-
-func _on_small_munch_taken() -> void:
-	animation.play("Munch")
