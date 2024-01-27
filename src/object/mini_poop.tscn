@@ -4,12 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://7tmasvgif5ux" path="res://assets/T_poo_chunk.png" id="2_4gya3"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qtxn8"]
+rough = true
 bounce = 0.1
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r5li8"]
 radius = 18.0
 
-[node name="PoopControl" type="Node2D"]
+[node name="PoopControl" type="Node2D" groups=["MiniPoops"]]
 script = ExtResource("1_i8fbc")
 
 [node name="MiniPoop" type="RigidBody2D" parent="."]

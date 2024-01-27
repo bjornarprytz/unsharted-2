@@ -29,7 +29,7 @@ func _physics_process(delta):
 		if b.name == "PlayerBarrier":
 			var areas = detection_area.get_overlapping_areas()
 			for a in areas:
-				if a.owner is Gas:
+				if a.name == "Gas":
 					Global.GameOver.emit(GlobalSingleton.Outcome.Assphxiation)
 
 var smash_timer : SceneTreeTimer
@@ -50,7 +50,7 @@ func _input(event: InputEvent) -> void:
 			apply_impulse(Vector2.DOWN * 20.0)
 			animation.play("Fall"+_animation_postfix())
 			await animation.animation_finished
-			pass
+			Global.Fart.emit(linear_velocity.length())
 		else:
 			animation.stop()
 			aborted_smash = true
@@ -61,7 +61,7 @@ func _on_detection_area_area_entered(area: Area2D) -> void:
 	if thing is MiniPoop:
 		thing.poop.sleeping = true
 		thing.poop.gravity_scale = 0.0
-		thing.reparent(self)
+		thing.reparent.call_deferred(self)
 		animation.play("Munch"+_animation_postfix())
 		var tween = create_tween()
 		target_scale += (Vector2.ONE * .02)
@@ -73,15 +73,9 @@ func _on_detection_area_area_entered(area: Area2D) -> void:
 			pass
 
 func _animation_postfix() -> String:
-	if (target_scale.x > 1.2):
+	if (target_scale.x > 1.3):
 		return "_Medium"
 	else:
 		return ""
 
-func fart():
-	pass
-	# Clear out the gas
-	# Fart sound depending on gas volume
-	# Eject Poop (disable anus)
-	# If player is ejected, game over
-	# Otherwise, close anus and resume
+

@@ -32,7 +32,7 @@ project/assembly_name="Unsharted2"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_state_charts/plugin.cfg", "res://addons/softbody2d/plugin.cfg")
+enabled=PackedStringArray("res://addons/softbody2d/plugin.cfg")
 
 [input]
 

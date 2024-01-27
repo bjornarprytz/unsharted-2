@@ -4,15 +4,28 @@ extends Node2D
 
 @onready var spawn_area : ColorRect = $MiniPoopSpawn
 
+@onready var anus : StaticBody2D = $Anus
+
+@onready var gas : Gas = $Gas
+@onready var ass_sounds : AudioStreamPlayer2D = $AssAudio
+
+@onready var fart_sounds = [
+preload("res://assets/audio/61047__timtube__fart.wav"),
+preload("res://assets/audio/74637__ifartinurgeneraldirection__abrupt-fart-2.mp3"),
+preload("res://assets/audio/94989__deleted_user_1391979__bad-chili-fart.wav"),
+preload("res://assets/audio/402569__teddyferguson__fart.mp3"),
+preload("res://assets/audio/523467__tv_ling__perfect-fart.mp3"),
+preload("res://assets/audio/650652__frenkfurth__wav-fart-vegan-005.wav")
+]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	spawn_area.get_rect()
+	Global.Fart.connect(fart)
 
 const spawn_interval : float = .69
 
 var spawn_timer := 0.0
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta: float) -> void:
 	spawn_timer += delta
 	
@@ -28,3 +41,15 @@ func _get_random_spawn_point() -> Vector2:
 	var low_y = spawn_area.get_rect().position.y
 	var top_y = spawn_area.get_rect().position.y + spawn_area.get_rect().size.y
 	return Vector2(randf_range(low_x, top_x), randf_range(low_y, top_y))
+
+func fart(magnitude: float):
+	ass_sounds.stream = fart_sounds.pick_random()
+	# TODO: Fart sound depending on gas volume
+	ass_sounds.play()
+	# Clear out the gas
+	anus.process_mode = Node.PROCESS_MODE_DISABLED
+	
+	get_tree().call_group("MiniPoops", "flush")
+	# Eject Poop (disable anus)
+	# If player is ejected, game over
+	# Otherwise, close anus and resume

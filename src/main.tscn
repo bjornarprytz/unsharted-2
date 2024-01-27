@@ -74,6 +74,9 @@ position = Vector2(0, 8)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_sbxno")
 
+[node name="AssAudio" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(663, 657)
+
 [node name="ThePoop" parent="." instance=ExtResource("1_4fu6l")]
 position = Vector2(664, 160)
 
