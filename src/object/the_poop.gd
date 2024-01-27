@@ -17,11 +17,14 @@ func _input(event: InputEvent) -> void:
 		apply_impulse(Vector2.RIGHT * force)
 
 func _physics_process(delta: float) -> void:
-	pass
+	if !$AnimatedSprite2D.is_playing():
+		$AnimatedSprite2D.play("Idle")
 
 func _on_detection_area_area_entered(area: Area2D) -> void:
 	var thing = area.owner
 	if thing is MiniPoop:
+		$AnimatedSprite2D.play("Munch")
+		
 		var tween = create_tween()
 		tween.tween_property(thing, "modulate:a", 0.0, .5)
 		target_scale += (Vector2.ONE * .1)
