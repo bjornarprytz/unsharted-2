@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dhgh2cea5xa1y" path="res://object/the_poop.tscn" id="1_4fu6l"]
 [ext_resource type="Script" path="res://main.gd" id="1_rtgrn"]
-[ext_resource type="Texture2D" uid="uid://dngm5oelhbq82" path="res://assets/background.png" id="2_ce6sq"]
+[ext_resource type="Texture2D" uid="uid://d3u25a58keqjl" path="res://assets/background.png" id="2_ce6sq"]
 [ext_resource type="PackedScene" uid="uid://qgjhw8r2elro" path="res://object/gas.tscn" id="4_60dpx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6qvjl"]

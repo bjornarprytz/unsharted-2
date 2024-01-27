@@ -6,10 +6,14 @@ signal GameOver
 signal Fart(magnitude: float)
 signal PoopConsumed
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
 
+var score : int = 0
+
+func _ready() -> void:
+	Global.PoopConsumed.connect(increment_score.bind(1))
+
+func increment_score(value: int):
+	score += value
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

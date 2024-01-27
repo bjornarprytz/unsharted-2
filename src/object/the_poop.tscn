@@ -1,11 +1,11 @@
 [gd_scene load_steps=32 format=3 uid="uid://dhgh2cea5xa1y"]
 
 [ext_resource type="Script" path="res://object/the_poop.gd" id="1_bgfqd"]
-[ext_resource type="Texture2D" uid="uid://b1b325d70n2ul" path="res://assets/spritemaps/smallidle.png" id="2_5b7o5"]
-[ext_resource type="Texture2D" uid="uid://cfxht7ciwh75w" path="res://assets/spritemaps/smallsmash_falling.png" id="2_nk72p"]
-[ext_resource type="Texture2D" uid="uid://cbpgkd8fpgv1y" path="res://assets/spritemaps/T_poo_small_munch.png" id="3_shgh8"]
-[ext_resource type="Texture2D" uid="uid://d5gt1u4ch61c" path="res://assets/spritemaps/smallsmash_impact.png" id="4_kxdg8"]
-[ext_resource type="Texture2D" uid="uid://j74i03jkkd5y" path="res://assets/spritemaps/smallsmash_windup.png" id="6_6ucfl"]
+[ext_resource type="Texture2D" uid="uid://dpl7l5dxpj547" path="res://assets/spritemaps/smallidle.png" id="2_5b7o5"]
+[ext_resource type="Texture2D" uid="uid://b8qg1n7818whe" path="res://assets/spritemaps/smallsmash_falling.png" id="2_nk72p"]
+[ext_resource type="Texture2D" uid="uid://bkjw8ojs10jfn" path="res://assets/spritemaps/T_poo_small_munch.png" id="3_shgh8"]
+[ext_resource type="Texture2D" uid="uid://duppuuqt36dfp" path="res://assets/spritemaps/smallsmash_impact.png" id="4_kxdg8"]
+[ext_resource type="Texture2D" uid="uid://do8fl48025w5h" path="res://assets/spritemaps/smallsmash_windup.png" id="6_6ucfl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u6mfj"]
 atlas = ExtResource("2_nk72p")
@@ -204,9 +204,9 @@ animations = [{
 }]
 
 [node name="Poop" type="RigidBody2D"]
+collision_layer = 3
 collision_mask = 14
 linear_damp = -1.0
-collision_layer = 3
 script = ExtResource("1_bgfqd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -222,7 +222,6 @@ polygon = PackedVector2Array(-42, -27, -37, -33, -26, -40, -17, -44, -10, -43, -
 
 [node name="DetectionArea" type="Area2D" parent="."]
 collision_mask = 2
-gravity_space_override = 3
 gravity_point = true
 gravity_point_center = Vector2(0, 0)
 gravity_direction = Vector2(0, 0)

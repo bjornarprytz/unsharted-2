@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cyeovor3sqb8w"]
 
 [ext_resource type="Script" path="res://object/chunk.gd" id="1_20okq"]
-[ext_resource type="Texture2D" uid="uid://bahnx8aebrdx3" path="res://assets/T_poo_chunk.png" id="1_cfn7u"]
+[ext_resource type="Texture2D" uid="uid://7tmasvgif5ux" path="res://assets/T_poo_chunk.png" id="1_cfn7u"]
 
 [node name="Chunk" type="StaticBody2D"]
 collision_layer = 3
