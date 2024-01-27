@@ -274,67 +274,15 @@ initial_state = NodePath("Small")
 [node name="Small" type="Node" parent="StateChart/Root/Size"]
 script = ExtResource("11_rwbsi")
 
-[node name="Idle" type="Node" parent="StateChart/Root/Size/Small"]
-script = ExtResource("12_alwc2")
-to = NodePath("..")
-event = &"idle"
-
-[node name="Fall" type="Node" parent="StateChart/Root/Size/Small"]
-script = ExtResource("12_alwc2")
-to = NodePath("..")
-event = &"fall"
-
-[node name="Windup" type="Node" parent="StateChart/Root/Size/Small"]
-script = ExtResource("12_alwc2")
-to = NodePath("..")
-event = &"windup"
-
-[node name="Impact" type="Node" parent="StateChart/Root/Size/Small"]
-script = ExtResource("12_alwc2")
-to = NodePath("..")
-event = &"impact"
-
-[node name="Munch" type="Node" parent="StateChart/Root/Size/Small"]
-script = ExtResource("12_alwc2")
-to = NodePath("..")
-event = &"munch"
-
 [node name="ToMedium" type="Node" parent="StateChart/Root/Size/Small"]
 script = ExtResource("12_alwc2")
 to = NodePath("../../Medium")
-event = &"to_medium"
+
+[node name="Idle" type="Node" parent="StateChart/Root/Size/Small"]
+script = ExtResource("12_alwc2")
+to = NodePath("..")
 
 [node name="Medium" type="Node" parent="StateChart/Root/Size"]
 script = ExtResource("11_rwbsi")
 
-[node name="Idle" type="Node" parent="StateChart/Root/Size/Medium"]
-script = ExtResource("12_alwc2")
-to = NodePath("..")
-event = &"idle"
-
-[node name="Fall" type="Node" parent="StateChart/Root/Size/Medium"]
-script = ExtResource("12_alwc2")
-to = NodePath("..")
-event = &"fall"
-
-[node name="Windup" type="Node" parent="StateChart/Root/Size/Medium"]
-script = ExtResource("12_alwc2")
-to = NodePath("..")
-event = &"windup"
-
-[node name="Impact" type="Node" parent="StateChart/Root/Size/Medium"]
-script = ExtResource("12_alwc2")
-to = NodePath("..")
-event = &"impact"
-
-[node name="Munch" type="Node" parent="StateChart/Root/Size/Medium"]
-script = ExtResource("12_alwc2")
-to = NodePath("..")
-event = &"munch"
-
 [connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]
-[connection signal="taken" from="StateChart/Root/Size/Small/Idle" to="." method="_on_small_idle_taken"]
-[connection signal="taken" from="StateChart/Root/Size/Small/Fall" to="." method="_on_fall_taken"]
-[connection signal="taken" from="StateChart/Root/Size/Small/Windup" to="." method="_on_windup_taken"]
-[connection signal="taken" from="StateChart/Root/Size/Small/Impact" to="." method="_on_impact_taken"]
-[connection signal="taken" from="StateChart/Root/Size/Small/Munch" to="." method="_on_munch_taken"]
