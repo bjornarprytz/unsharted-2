@@ -5,7 +5,6 @@
 [ext_resource type="Script" path="res://addons/softbody2d/softbody2d.gd" id="2_efmj3"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_78j15"]
-absorbent = true
 
 [sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_c77r0"]
 resource_local_to_scene = true

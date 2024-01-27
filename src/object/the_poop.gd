@@ -20,13 +20,13 @@ func _input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	detection_area.global_position = poop.get_bones_center_position()
-	poop.scale = poop.scale.move_toward(target_scale, delta)
+
 
 func _on_detection_area_body_entered(body: Node2D) -> void:
 	var thing = body.owner
 	if thing is MiniPoop:
+		thing.poop.collision_layer = 0
 		var tween = create_tween()
-		tween.tween_property(thing, "scale", Vector2.ZERO, 2.0)
-		target_scale += (Vector2.ONE*.1)
+		tween.tween_property(thing, "modulate:a", 0.0, .5)
 		tween.tween_callback(thing.queue_free)
 		

@@ -4,7 +4,7 @@
 
 ### Bugs
 
-- Scaling SoftBody is a bit tricky
+- Figure out a way to scale the poop
 
 ### Deploy
 
