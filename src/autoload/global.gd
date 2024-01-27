@@ -1,8 +1,13 @@
 class_name GlobalSingleton
 extends Node2D
 
+enum Outcome{
+	Assphxiation,
+	Ejection,
+	Victory
+}
 
-signal GameOver
+signal GameOver(outcome: GlobalSingleton.Outcome)
 signal Fart(magnitude: float)
 signal PoopConsumed
 signal ScoreUpdated(score: int)

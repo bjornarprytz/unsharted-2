@@ -23,6 +23,14 @@ func _physics_process(delta):
 		apply_force(Vector2.LEFT * force * delta)
 	if Input.is_action_pressed("right"):
 		apply_force(Vector2.RIGHT * force * delta)
+		
+	var bodies = get_colliding_bodies()
+	for b in bodies:
+		if b.name == "PlayerBarrier":
+			var areas = detection_area.get_overlapping_areas()
+			for a in areas:
+				if a.owner is Gas:
+					Global.GameOver.emit(GlobalSingleton.Outcome.Assphxiation)
 
 var smash_timer : SceneTreeTimer
 var aborted_smash : bool
@@ -51,6 +59,9 @@ func _input(event: InputEvent) -> void:
 func _on_detection_area_area_entered(area: Area2D) -> void:
 	var thing = area.owner
 	if thing is MiniPoop:
+		thing.poop.sleeping = true
+		thing.poop.gravity_scale = 0.0
+		thing.reparent(self)
 		animation.play("Munch"+_animation_postfix())
 		var tween = create_tween()
 		target_scale += (Vector2.ONE * .02)

@@ -12,25 +12,25 @@ radius = 18.0
 [node name="PoopControl" type="Node2D"]
 script = ExtResource("1_i8fbc")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
+[node name="MiniPoop" type="RigidBody2D" parent="."]
 collision_layer = 2
 collision_mask = 7
 physics_material_override = SubResource("PhysicsMaterial_qtxn8")
 
-[node name="Shape" type="CollisionPolygon2D" parent="RigidBody2D"]
+[node name="Shape" type="CollisionPolygon2D" parent="MiniPoop"]
 position = Vector2(-0.390623, 0)
 polygon = PackedVector2Array(7.39062, 12, 15.3906, 0, 11.3906, -9, 3.39062, -12, -2.60938, -12, -6.60938, -6, -14.6094, 0, -10.6094, 9, -3.60938, 13)
 
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="MiniPoop"]
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_4gya3")
 
-[node name="DetectionArea" type="Area2D" parent="RigidBody2D"]
+[node name="DetectionArea" type="Area2D" parent="MiniPoop"]
 collision_layer = 2
 collision_mask = 2
 gravity_point = true
 gravity_point_center = Vector2(0, 0)
 gravity_direction = Vector2(0, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/DetectionArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MiniPoop/DetectionArea"]
 shape = SubResource("CircleShape2D_r5li8")

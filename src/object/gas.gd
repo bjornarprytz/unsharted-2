@@ -16,9 +16,7 @@ func _change_height(amount: float):
 	visual.position.y -= amount
 	visual.size.y += amount
 
-
-
-func _on_body_entered(body: RigidBody2D):
+func _on_body_entered(body):
 	if body.name == "ThePoop":
 		body.add_constant_force(Vector2.UP * bounce_force)
 
