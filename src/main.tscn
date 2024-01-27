@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cdqjsqe31jql2"]
+[gd_scene load_steps=5 format=3 uid="uid://cdqjsqe31jql2"]
 
 [ext_resource type="PackedScene" uid="uid://dhgh2cea5xa1y" path="res://object/the_poop.tscn" id="1_4fu6l"]
 [ext_resource type="Script" path="res://main.gd" id="1_rtgrn"]
-[ext_resource type="Script" path="res://OutsideWorld.gd" id="3_v7gnd"]
 [ext_resource type="PackedScene" uid="uid://qgjhw8r2elro" path="res://object/gas.tscn" id="4_60dpx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6qvjl"]
@@ -86,15 +85,6 @@ offset_right = 721.0
 offset_bottom = -5.0
 mouse_filter = 2
 color = Color(1, 1, 1, 0)
-
-[node name="OutsideWorld" type="Node2D" parent="."]
-script = ExtResource("3_v7gnd")
-
-[node name="Control" type="VideoStreamPlayer" parent="OutsideWorld"]
-offset_left = 812.0
-offset_top = 414.0
-offset_right = 1027.0
-offset_bottom = 562.0
 
 [node name="Gas" parent="." instance=ExtResource("4_60dpx")]
 
