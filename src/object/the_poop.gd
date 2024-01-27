@@ -56,4 +56,5 @@ func _increase_size():
 		add_chunk()
 func add_chunk():
 	var chunk = chunk_spawnr.instantiate()
+	add_child(chunk)
 	
