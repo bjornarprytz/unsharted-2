@@ -7,7 +7,7 @@
 radius = 46.0977
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mnn0d"]
-radius = 74.0068
+radius = 66.0
 
 [node name="Poop" type="RigidBody2D"]
 collision_layer = 3
