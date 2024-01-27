@@ -1,209 +1,212 @@
-[gd_scene load_steps=30 format=3 uid="uid://dp5apt1ev6usw"]
+[gd_scene load_steps=31 format=3 uid="uid://dp5apt1ev6usw"]
 
 [ext_resource type="Texture2D" uid="uid://dpb5swidemuk0" path="res://assets/poop.png" id="1_2skbc"]
 [ext_resource type="Script" path="res://object/mini_poop.gd" id="1_i8fbc"]
 [ext_resource type="Script" path="res://addons/softbody2d/softbody2d.gd" id="2_t6idu"]
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_uw537"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_ap1ck"]
 resource_local_to_scene = true
 bone_index = 0
 bone2d_node = NodePath("Bone-0")
 target_nodepath = NodePath("Bone-4")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_ul04a"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_mcxpl"]
 resource_local_to_scene = true
 bone_index = 1
 bone2d_node = NodePath("Bone-1")
 target_nodepath = NodePath("Bone-4")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_es8v2"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_65dkv"]
 resource_local_to_scene = true
 bone_index = 10
 bone2d_node = NodePath("Bone-10")
 target_nodepath = NodePath("Bone-20")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_f1y1m"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_vvvsg"]
 resource_local_to_scene = true
 bone_index = 11
 bone2d_node = NodePath("Bone-11")
 target_nodepath = NodePath("Bone-12")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_klh81"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_4i5ps"]
 resource_local_to_scene = true
 bone_index = 12
 bone2d_node = NodePath("Bone-12")
 target_nodepath = NodePath("Bone-8")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_306vb"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_h78xm"]
 resource_local_to_scene = true
 bone_index = 13
 bone2d_node = NodePath("Bone-13")
 target_nodepath = NodePath("Bone-14")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_vet4x"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_27uy7"]
 resource_local_to_scene = true
 bone_index = 14
 bone2d_node = NodePath("Bone-14")
 target_nodepath = NodePath("Bone-15")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_ebo27"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_vu8gn"]
 resource_local_to_scene = true
 bone_index = 15
 bone2d_node = NodePath("Bone-15")
 target_nodepath = NodePath("Bone-20")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_5x51h"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_7qthm"]
 resource_local_to_scene = true
 bone_index = 16
 bone2d_node = NodePath("Bone-16")
 target_nodepath = NodePath("Bone-13")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_nfrr4"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_r7e40"]
 resource_local_to_scene = true
 bone_index = 17
 bone2d_node = NodePath("Bone-17")
 target_nodepath = NodePath("Bone-14")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_ooexu"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_j0cl1"]
 resource_local_to_scene = true
 bone_index = 18
 bone2d_node = NodePath("Bone-18")
 target_nodepath = NodePath("Bone-15")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_t6811"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_f4y3a"]
 resource_local_to_scene = true
 bone_index = 19
 bone2d_node = NodePath("Bone-19")
 target_nodepath = NodePath("Bone-15")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_b674n"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_ovgkt"]
 resource_local_to_scene = true
 bone_index = 2
 bone2d_node = NodePath("Bone-2")
 target_nodepath = NodePath("Bone-3")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_0y7qo"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_k426v"]
 resource_local_to_scene = true
 bone_index = 20
 bone2d_node = NodePath("Bone-20")
 target_nodepath = NodePath("Bone-15")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_n6h18"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_2swv3"]
 resource_local_to_scene = true
 bone_index = 21
 bone2d_node = NodePath("Bone-21")
 target_nodepath = NodePath("Bone-20")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_o16p0"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_1lmkr"]
 resource_local_to_scene = true
 bone_index = 22
 bone2d_node = NodePath("Bone-22")
 target_nodepath = NodePath("Bone-18")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_4q4k7"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_rm2l4"]
 resource_local_to_scene = true
 bone_index = 23
 bone2d_node = NodePath("Bone-23")
 target_nodepath = NodePath("Bone-18")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_fuo1u"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_g0p2p"]
 resource_local_to_scene = true
 bone_index = 3
 bone2d_node = NodePath("Bone-3")
 target_nodepath = NodePath("Bone-2")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_iqopo"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_sbxdv"]
 resource_local_to_scene = true
 bone_index = 4
 bone2d_node = NodePath("Bone-4")
 target_nodepath = NodePath("Bone-5")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_rxg0g"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_d0emm"]
 resource_local_to_scene = true
 bone_index = 5
 bone2d_node = NodePath("Bone-5")
 target_nodepath = NodePath("Bone-9")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_a1eet"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_ii5r6"]
 resource_local_to_scene = true
 bone_index = 6
 bone2d_node = NodePath("Bone-6")
 target_nodepath = NodePath("Bone-11")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_bccsj"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_apnd8"]
 resource_local_to_scene = true
 bone_index = 7
 bone2d_node = NodePath("Bone-7")
 target_nodepath = NodePath("Bone-6")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_j15vy"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_4e6fb"]
 resource_local_to_scene = true
 bone_index = 8
 bone2d_node = NodePath("Bone-8")
 target_nodepath = NodePath("Bone-9")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_x3l8o"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_xnl8b"]
 resource_local_to_scene = true
 bone_index = 9
 bone2d_node = NodePath("Bone-9")
 target_nodepath = NodePath("Bone-10")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_iwhnb"]
+[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_82yls"]
 resource_local_to_scene = true
 enabled = true
 modification_count = 24
-modifications/0 = SubResource("SkeletonModification2DLookAt_uw537")
-modifications/1 = SubResource("SkeletonModification2DLookAt_ul04a")
-modifications/2 = SubResource("SkeletonModification2DLookAt_b674n")
-modifications/3 = SubResource("SkeletonModification2DLookAt_fuo1u")
-modifications/4 = SubResource("SkeletonModification2DLookAt_iqopo")
-modifications/5 = SubResource("SkeletonModification2DLookAt_rxg0g")
-modifications/6 = SubResource("SkeletonModification2DLookAt_a1eet")
-modifications/7 = SubResource("SkeletonModification2DLookAt_bccsj")
-modifications/8 = SubResource("SkeletonModification2DLookAt_j15vy")
-modifications/9 = SubResource("SkeletonModification2DLookAt_x3l8o")
-modifications/10 = SubResource("SkeletonModification2DLookAt_es8v2")
-modifications/11 = SubResource("SkeletonModification2DLookAt_f1y1m")
-modifications/12 = SubResource("SkeletonModification2DLookAt_klh81")
-modifications/13 = SubResource("SkeletonModification2DLookAt_306vb")
-modifications/14 = SubResource("SkeletonModification2DLookAt_vet4x")
-modifications/15 = SubResource("SkeletonModification2DLookAt_ebo27")
-modifications/16 = SubResource("SkeletonModification2DLookAt_5x51h")
-modifications/17 = SubResource("SkeletonModification2DLookAt_nfrr4")
-modifications/18 = SubResource("SkeletonModification2DLookAt_ooexu")
-modifications/19 = SubResource("SkeletonModification2DLookAt_t6811")
-modifications/20 = SubResource("SkeletonModification2DLookAt_0y7qo")
-modifications/21 = SubResource("SkeletonModification2DLookAt_n6h18")
-modifications/22 = SubResource("SkeletonModification2DLookAt_o16p0")
-modifications/23 = SubResource("SkeletonModification2DLookAt_4q4k7")
+modifications/0 = SubResource("SkeletonModification2DLookAt_ap1ck")
+modifications/1 = SubResource("SkeletonModification2DLookAt_mcxpl")
+modifications/2 = SubResource("SkeletonModification2DLookAt_ovgkt")
+modifications/3 = SubResource("SkeletonModification2DLookAt_g0p2p")
+modifications/4 = SubResource("SkeletonModification2DLookAt_sbxdv")
+modifications/5 = SubResource("SkeletonModification2DLookAt_d0emm")
+modifications/6 = SubResource("SkeletonModification2DLookAt_ii5r6")
+modifications/7 = SubResource("SkeletonModification2DLookAt_apnd8")
+modifications/8 = SubResource("SkeletonModification2DLookAt_4e6fb")
+modifications/9 = SubResource("SkeletonModification2DLookAt_xnl8b")
+modifications/10 = SubResource("SkeletonModification2DLookAt_65dkv")
+modifications/11 = SubResource("SkeletonModification2DLookAt_vvvsg")
+modifications/12 = SubResource("SkeletonModification2DLookAt_4i5ps")
+modifications/13 = SubResource("SkeletonModification2DLookAt_h78xm")
+modifications/14 = SubResource("SkeletonModification2DLookAt_27uy7")
+modifications/15 = SubResource("SkeletonModification2DLookAt_vu8gn")
+modifications/16 = SubResource("SkeletonModification2DLookAt_7qthm")
+modifications/17 = SubResource("SkeletonModification2DLookAt_r7e40")
+modifications/18 = SubResource("SkeletonModification2DLookAt_j0cl1")
+modifications/19 = SubResource("SkeletonModification2DLookAt_f4y3a")
+modifications/20 = SubResource("SkeletonModification2DLookAt_k426v")
+modifications/21 = SubResource("SkeletonModification2DLookAt_2swv3")
+modifications/22 = SubResource("SkeletonModification2DLookAt_1lmkr")
+modifications/23 = SubResource("SkeletonModification2DLookAt_rm2l4")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_o1hih"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_f7sfm"]
 resource_local_to_scene = true
-radius = 8.0
+radius = 2.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r5li8"]
+radius = 6.0
 
 [node name="PoopControl" type="Node2D"]
 script = ExtResource("1_i8fbc")
@@ -219,12 +222,14 @@ bones = ["Bone-0", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
 internal_vertex_count = 417
 script = ExtResource("2_t6idu")
 vertex_interval = 20
-radius = 16
+collision_layer = 2
+collision_mask = 2
+radius = 5
 gravity_scale = 0.2
 
 [node name="Skeleton2D" type="Skeleton2D" parent="MiniPoop"]
 visible = false
-modification_stack = SubResource("SkeletonModificationStack2D_iwhnb")
+modification_stack = SubResource("SkeletonModificationStack2D_82yls")
 
 [node name="Bone-0" type="Bone2D" parent="MiniPoop/Skeleton2D"]
 position = Vector2(5, 40)
@@ -535,7 +540,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-22" type="Bone2D" parent="MiniPoop/Skeleton2D"]
 position = Vector2(94.7333, 35.5)
 rotation = 2.11222
-scale = Vector2(1, 1)
+scale = Vector2(0.999999, 0.999999)
 rest = Transform2D(-0.515353, 0.856978, -0.856978, -0.515353, 94.7333, 35.5)
 auto_calculate_length_and_angle = false
 length = 20.0
@@ -562,13 +567,15 @@ metadata/_local_pose_override_enabled_ = true
 
 [node name="Bone-0" type="RigidBody2D" parent="MiniPoop"]
 position = Vector2(5, 40)
+collision_layer = 2
+collision_mask = 2
 mass = 0.0416667
 gravity_scale = 0.2
 metadata/idx = 0
 metadata/bone_name = &"Bone-0"
 
 [node name="CircleShape2D" type="CollisionShape2D" parent="MiniPoop/Bone-0"]
-shape = SubResource("CircleShape2D_o1hih")
+shape = SubResource("CircleShape2D_f7sfm")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="MiniPoop/Bone-0"]
 visible = false
@@ -605,13 +612,15 @@ softness = 60.0
 
 [node name="Bone-1" type="RigidBody2D" parent="MiniPoop"]
 position = Vector2(5, 60)
+collision_layer = 2
+collision_mask = 2
 mass = 0.0416667
 gravity_scale = 0.2
 metadata/idx = 1
 metadata/bone_name = &"Bone-1"
 
 [node name="CircleShape2D" type="CollisionShape2D" parent="MiniPoop/Bone-1"]
-shape = SubResource("CircleShape2D_o1hih")
+shape = SubResource("CircleShape2D_f7sfm")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="MiniPoop/Bone-1"]
 visible = false
@@ -649,13 +658,15 @@ softness = 60.0
 
 [node name="Bone-2" type="RigidBody2D" parent="MiniPoop"]
 position = Vector2(16.875, 16.8333)
+collision_layer = 2
+collision_mask = 2
 mass = 0.0416667
 gravity_scale = 0.2
 metadata/idx = 2
 metadata/bone_name = &"Bone-2"
 
 [node name="CircleShape2D" type="CollisionShape2D" parent="MiniPoop/Bone-2"]
-shape = SubResource("CircleShape2D_o1hih")
+shape = SubResource("CircleShape2D_f7sfm")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="MiniPoop/Bone-2"]
 visible = false
@@ -700,13 +711,15 @@ softness = 60.0
 
 [node name="Bone-3" type="RigidBody2D" parent="MiniPoop"]
 position = Vector2(20, 40)
+collision_layer = 2
+collision_mask = 2
 mass = 0.0416667
 gravity_scale = 0.2
 metadata/idx = 3
 metadata/bone_name = &"Bone-3"
 
 [node name="CircleShape2D" type="CollisionShape2D" parent="MiniPoop/Bone-3"]
-shape = SubResource("CircleShape2D_o1hih")
+shape = SubResource("CircleShape2D_f7sfm")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="MiniPoop/Bone-3"]
 visible = false
@@ -764,13 +777,15 @@ softness = 60.0
 
 [node name="Bone-4" type="RigidBody2D" parent="MiniPoop"]
 position = Vector2(20, 60)
+collision_layer = 2
+collision_mask = 2
 mass = 0.0416667
 gravity_scale = 0.2
 metadata/idx = 4
 metadata/bone_name = &"Bone-4"
 
 [node name="CircleShape2D" type="CollisionShape2D" parent="MiniPoop/Bone-4"]
-shape = SubResource("CircleShape2D_o1hih")
+shape = SubResource("CircleShape2D_f7sfm")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="MiniPoop/Bone-4"]
 visible = false
@@ -829,13 +844,15 @@ softness = 60.0
 
 [node name="Bone-5" type="RigidBody2D" parent="MiniPoop"]
 position = Vector2(16.75, 83.5)
+collision_layer = 2
+collision_mask = 2
 mass = 0.0416667
 gravity_scale = 0.2
 metadata/idx = 5
 metadata/bone_name = &"Bone-5"
 
 [node name="CircleShape2D" type="CollisionShape2D" parent="MiniPoop/Bone-5"]
-shape = SubResource("CircleShape2D_o1hih")
+shape = SubResource("CircleShape2D_f7sfm")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="MiniPoop/Bone-5"]
 visible = false
@@ -880,13 +897,15 @@ softness = 60.0
 
 [node name="Bone-6" type="RigidBody2D" parent="MiniPoop"]
 position = Vector2(40, 5)
+collision_layer = 2
+collision_mask = 2
 mass = 0.0416667
 gravity_scale = 0.2
 metadata/idx = 6
 metadata/bone_name = &"Bone-6"
 
 [node name="CircleShape2D" type="CollisionShape2D" parent="MiniPoop/Bone-6"]
-shape = SubResource("CircleShape2D_o1hih")
+shape = SubResource("CircleShape2D_f7sfm")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="MiniPoop/Bone-6"]
 visible = false
@@ -923,13 +942,15 @@ softness = 60.0
 
 [node name="Bone-7" type="RigidBody2D" parent="MiniPoop"]
 position = Vector2(40, 20)
+collision_layer = 2
+collision_mask = 2
 mass = 0.0416667
 gravity_scale = 0.2
 metadata/idx = 7
 metadata/bone_name = &"Bone-7"
 
 [node name="CircleShape2D" type="CollisionShape2D" parent="MiniPoop/Bone-7"]
-shape = SubResource("CircleShape2D_o1hih")
+shape = SubResource("CircleShape2D_f7sfm")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="MiniPoop/Bone-7"]
 visible = false
@@ -987,13 +1008,15 @@ softness = 60.0
 
 [node name="Bone-8" type="RigidBody2D" parent="MiniPoop"]
 position = Vector2(40, 40)
+collision_layer = 2
+collision_mask = 2
 mass = 0.0416667
 gravity_scale = 0.2
 metadata/idx = 8
 metadata/bone_name = &"Bone-8"
 
 [node name="CircleShape2D" type="CollisionShape2D" parent="MiniPoop/Bone-8"]
-shape = SubResource("CircleShape2D_o1hih")
+shape = SubResource("CircleShape2D_f7sfm")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="MiniPoop/Bone-8"]
 visible = false
@@ -1058,13 +1081,15 @@ softness = 60.0
 
 [node name="Bone-9" type="RigidBody2D" parent="MiniPoop"]
 position = Vector2(40, 60)
+collision_layer = 2
+collision_mask = 2
 mass = 0.0416667
 gravity_scale = 0.2
 metadata/idx = 9
 metadata/bone_name = &"Bone-9"
 
 [node name="CircleShape2D" type="CollisionShape2D" parent="MiniPoop/Bone-9"]
-shape = SubResource("CircleShape2D_o1hih")
+shape = SubResource("CircleShape2D_f7sfm")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="MiniPoop/Bone-9"]
 visible = false
@@ -1129,13 +1154,15 @@ softness = 60.0
 
 [node name="Bone-10" type="RigidBody2D" parent="MiniPoop"]
 position = Vector2(40, 80)
+collision_layer = 2
+collision_mask = 2
 mass = 0.0416667
 gravity_scale = 0.2
 metadata/idx = 10
 metadata/bone_name = &"Bone-10"
 
 [node name="CircleShape2D" type="CollisionShape2D" parent="MiniPoop/Bone-10"]
-shape = SubResource("CircleShape2D_o1hih")
+shape = SubResource("CircleShape2D_f7sfm")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="MiniPoop/Bone-10"]
 visible = false
@@ -1193,13 +1220,15 @@ softness = 60.0
 
 [node name="Bone-11" type="RigidBody2D" parent="MiniPoop"]
 position = Vector2(60, 5)
+collision_layer = 2
+collision_mask = 2
 mass = 0.0416667
 gravity_scale = 0.2
 metadata/idx = 11
 metadata/bone_name = &"Bone-11"
 
 [node name="CircleShape2D" type="CollisionShape2D" parent="MiniPoop/Bone-11"]
-shape = SubResource("CircleShape2D_o1hih")
+shape = SubResource("CircleShape2D_f7sfm")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="MiniPoop/Bone-11"]
 visible = false
@@ -1236,13 +1265,15 @@ softness = 60.0
 
 [node name="Bone-12" type="RigidBody2D" parent="MiniPoop"]
 position = Vector2(60, 20)
+collision_layer = 2
+collision_mask = 2
 mass = 0.0416667
 gravity_scale = 0.2
 metadata/idx = 12
 metadata/bone_name = &"Bone-12"
 
 [node name="CircleShape2D" type="CollisionShape2D" parent="MiniPoop/Bone-12"]
-shape = SubResource("CircleShape2D_o1hih")
+shape = SubResource("CircleShape2D_f7sfm")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="MiniPoop/Bone-12"]
 visible = false
@@ -1300,13 +1331,15 @@ softness = 60.0
 
 [node name="Bone-13" type="RigidBody2D" parent="MiniPoop"]
 position = Vector2(60, 40)
+collision_layer = 2
+collision_mask = 2
 mass = 0.0416667
 gravity_scale = 0.2
 metadata/idx = 13
 metadata/bone_name = &"Bone-13"
 
 [node name="CircleShape2D" type="CollisionShape2D" parent="MiniPoop/Bone-13"]
-shape = SubResource("CircleShape2D_o1hih")
+shape = SubResource("CircleShape2D_f7sfm")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="MiniPoop/Bone-13"]
 visible = false
@@ -1371,13 +1404,15 @@ softness = 60.0
 
 [node name="Bone-14" type="RigidBody2D" parent="MiniPoop"]
 position = Vector2(60, 60)
+collision_layer = 2
+collision_mask = 2
 mass = 0.0416667
 gravity_scale = 0.2
 metadata/idx = 14
 metadata/bone_name = &"Bone-14"
 
 [node name="CircleShape2D" type="CollisionShape2D" parent="MiniPoop/Bone-14"]
-shape = SubResource("CircleShape2D_o1hih")
+shape = SubResource("CircleShape2D_f7sfm")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="MiniPoop/Bone-14"]
 visible = false
@@ -1442,13 +1477,15 @@ softness = 60.0
 
 [node name="Bone-15" type="RigidBody2D" parent="MiniPoop"]
 position = Vector2(60, 80)
+collision_layer = 2
+collision_mask = 2
 mass = 0.0416667
 gravity_scale = 0.2
 metadata/idx = 15
 metadata/bone_name = &"Bone-15"
 
 [node name="CircleShape2D" type="CollisionShape2D" parent="MiniPoop/Bone-15"]
-shape = SubResource("CircleShape2D_o1hih")
+shape = SubResource("CircleShape2D_f7sfm")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="MiniPoop/Bone-15"]
 visible = false
@@ -1506,13 +1543,15 @@ softness = 60.0
 
 [node name="Bone-16" type="RigidBody2D" parent="MiniPoop"]
 position = Vector2(80, 17.375)
+collision_layer = 2
+collision_mask = 2
 mass = 0.0416667
 gravity_scale = 0.2
 metadata/idx = 16
 metadata/bone_name = &"Bone-16"
 
 [node name="CircleShape2D" type="CollisionShape2D" parent="MiniPoop/Bone-16"]
-shape = SubResource("CircleShape2D_o1hih")
+shape = SubResource("CircleShape2D_f7sfm")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="MiniPoop/Bone-16"]
 visible = false
@@ -1556,13 +1595,15 @@ softness = 60.0
 
 [node name="Bone-17" type="RigidBody2D" parent="MiniPoop"]
 position = Vector2(80, 40)
+collision_layer = 2
+collision_mask = 2
 mass = 0.0416667
 gravity_scale = 0.2
 metadata/idx = 17
 metadata/bone_name = &"Bone-17"
 
 [node name="CircleShape2D" type="CollisionShape2D" parent="MiniPoop/Bone-17"]
-shape = SubResource("CircleShape2D_o1hih")
+shape = SubResource("CircleShape2D_f7sfm")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="MiniPoop/Bone-17"]
 visible = false
@@ -1620,13 +1661,15 @@ softness = 60.0
 
 [node name="Bone-18" type="RigidBody2D" parent="MiniPoop"]
 position = Vector2(80, 60)
+collision_layer = 2
+collision_mask = 2
 mass = 0.0416667
 gravity_scale = 0.2
 metadata/idx = 18
 metadata/bone_name = &"Bone-18"
 
 [node name="CircleShape2D" type="CollisionShape2D" parent="MiniPoop/Bone-18"]
-shape = SubResource("CircleShape2D_o1hih")
+shape = SubResource("CircleShape2D_f7sfm")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="MiniPoop/Bone-18"]
 visible = false
@@ -1685,13 +1728,15 @@ softness = 60.0
 
 [node name="Bone-19" type="RigidBody2D" parent="MiniPoop"]
 position = Vector2(82.8125, 83)
+collision_layer = 2
+collision_mask = 2
 mass = 0.0416667
 gravity_scale = 0.2
 metadata/idx = 19
 metadata/bone_name = &"Bone-19"
 
 [node name="CircleShape2D" type="CollisionShape2D" parent="MiniPoop/Bone-19"]
-shape = SubResource("CircleShape2D_o1hih")
+shape = SubResource("CircleShape2D_f7sfm")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="MiniPoop/Bone-19"]
 visible = false
@@ -1736,13 +1781,15 @@ softness = 60.0
 
 [node name="Bone-20" type="RigidBody2D" parent="MiniPoop"]
 position = Vector2(40, 95)
+collision_layer = 2
+collision_mask = 2
 mass = 0.0416667
 gravity_scale = 0.2
 metadata/idx = 20
 metadata/bone_name = &"Bone-20"
 
 [node name="CircleShape2D" type="CollisionShape2D" parent="MiniPoop/Bone-20"]
-shape = SubResource("CircleShape2D_o1hih")
+shape = SubResource("CircleShape2D_f7sfm")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="MiniPoop/Bone-20"]
 visible = false
@@ -1780,13 +1827,15 @@ softness = 60.0
 
 [node name="Bone-21" type="RigidBody2D" parent="MiniPoop"]
 position = Vector2(60, 95)
+collision_layer = 2
+collision_mask = 2
 mass = 0.0416667
 gravity_scale = 0.2
 metadata/idx = 21
 metadata/bone_name = &"Bone-21"
 
 [node name="CircleShape2D" type="CollisionShape2D" parent="MiniPoop/Bone-21"]
-shape = SubResource("CircleShape2D_o1hih")
+shape = SubResource("CircleShape2D_f7sfm")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="MiniPoop/Bone-21"]
 visible = false
@@ -1824,13 +1873,15 @@ softness = 60.0
 
 [node name="Bone-22" type="RigidBody2D" parent="MiniPoop"]
 position = Vector2(94.7333, 35.5)
+collision_layer = 2
+collision_mask = 2
 mass = 0.0416667
 gravity_scale = 0.2
 metadata/idx = 22
 metadata/bone_name = &"Bone-22"
 
 [node name="CircleShape2D" type="CollisionShape2D" parent="MiniPoop/Bone-22"]
-shape = SubResource("CircleShape2D_o1hih")
+shape = SubResource("CircleShape2D_f7sfm")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="MiniPoop/Bone-22"]
 visible = false
@@ -1868,13 +1919,15 @@ softness = 60.0
 
 [node name="Bone-23" type="RigidBody2D" parent="MiniPoop"]
 position = Vector2(95, 60)
+collision_layer = 2
+collision_mask = 2
 mass = 0.0416667
 gravity_scale = 0.2
 metadata/idx = 23
 metadata/bone_name = &"Bone-23"
 
 [node name="CircleShape2D" type="CollisionShape2D" parent="MiniPoop/Bone-23"]
-shape = SubResource("CircleShape2D_o1hih")
+shape = SubResource("CircleShape2D_f7sfm")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="MiniPoop/Bone-23"]
 visible = false
@@ -1909,3 +1962,13 @@ rotation = -3.15248
 node_a = NodePath("..")
 node_b = NodePath("../../Bone-22")
 softness = 60.0
+
+[node name="DetectionArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+gravity_point = true
+gravity_point_center = Vector2(0, 0)
+gravity_direction = Vector2(0, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("CircleShape2D_r5li8")

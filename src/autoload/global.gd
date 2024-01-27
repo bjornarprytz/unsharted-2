@@ -3,8 +3,8 @@ extends Node2D
 
 
 signal GameOver
-signal Poop(magnitude: float)
-
+signal Fart(magnitude: float)
+signal PoopConsumed
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
