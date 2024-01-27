@@ -1,8 +1,35 @@
-[gd_scene load_steps=14 format=3 uid="uid://dhgh2cea5xa1y"]
+[gd_scene load_steps=32 format=3 uid="uid://dhgh2cea5xa1y"]
 
 [ext_resource type="Script" path="res://object/the_poop.gd" id="1_bgfqd"]
-[ext_resource type="Texture2D" uid="uid://ch3xjh8o6noji" path="res://assets/spritemaps/smallidle.png" id="2_5b7o5"]
-[ext_resource type="Texture2D" uid="uid://lbowsd4scc6e" path="res://assets/spritemaps/T_poo_small_munch.png" id="3_shgh8"]
+[ext_resource type="Texture2D" uid="uid://dove6iq1y07vf" path="res://assets/spritemaps/smallidle.png" id="2_5b7o5"]
+[ext_resource type="Texture2D" uid="uid://cns1854f8ov4v" path="res://assets/spritemaps/smallsmash_falling.png" id="2_nk72p"]
+[ext_resource type="Texture2D" uid="uid://bu275m8eav5lk" path="res://assets/spritemaps/T_poo_small_munch.png" id="3_shgh8"]
+[ext_resource type="Texture2D" uid="uid://dreefrc7myvu8" path="res://assets/spritemaps/smallsmash_impact.png" id="4_kxdg8"]
+[ext_resource type="Texture2D" uid="uid://d2b8qwfkcmvaf" path="res://assets/spritemaps/smallsmash_windup.png" id="6_6ucfl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6mfj"]
+atlas = ExtResource("2_nk72p")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtq1q"]
+atlas = ExtResource("2_nk72p")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7trs8"]
+atlas = ExtResource("2_nk72p")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1p17j"]
+atlas = ExtResource("2_nk72p")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1dm5r"]
+atlas = ExtResource("2_nk72p")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qu0a3"]
+atlas = ExtResource("2_nk72p")
+region = Rect2(640, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jyhvs"]
 atlas = ExtResource("2_5b7o5")
@@ -14,6 +41,18 @@ region = Rect2(128, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6a6dn"]
 atlas = ExtResource("2_5b7o5")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjg6d"]
+atlas = ExtResource("4_kxdg8")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ubket"]
+atlas = ExtResource("4_kxdg8")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nue7"]
+atlas = ExtResource("4_kxdg8")
 region = Rect2(256, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0w6mv"]
@@ -40,8 +79,55 @@ region = Rect2(512, 0, 128, 128)
 atlas = ExtResource("3_shgh8")
 region = Rect2(640, 0, 128, 128)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0onf"]
+atlas = ExtResource("6_6ucfl")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3hih"]
+atlas = ExtResource("6_6ucfl")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xdc7"]
+atlas = ExtResource("6_6ucfl")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8d55g"]
+atlas = ExtResource("6_6ucfl")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5a7h"]
+atlas = ExtResource("6_6ucfl")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2g2so"]
+atlas = ExtResource("6_6ucfl")
+region = Rect2(768, 0, 128, 128)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_qvfya"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6mfj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtq1q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7trs8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1p17j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1dm5r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qu0a3")
+}],
+"loop": true,
+"name": &"Fall",
+"speed": 12.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jyhvs")
@@ -54,7 +140,21 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 3.0
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjg6d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ubket")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7nue7")
+}],
+"loop": false,
+"name": &"Impact",
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -77,12 +177,35 @@ animations = [{
 }],
 "loop": false,
 "name": &"Munch",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0onf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3hih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xdc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8d55g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l5a7h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2g2so")
+}],
+"loop": false,
+"name": &"Windup",
 "speed": 12.0
 }]
 
 [node name="Poop" type="RigidBody2D"]
-collision_layer = 3
-collision_mask = 3
+collision_mask = 14
+linear_damp = -1.0
 script = ExtResource("1_bgfqd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -94,19 +217,15 @@ frame = 5
 frame_progress = 1.0
 
 [node name="Shape" type="CollisionPolygon2D" parent="."]
-visible = false
 polygon = PackedVector2Array(-42, -27, -37, -33, -26, -40, -17, -44, -10, -43, -4, -32, -2, -32, -1, -38, 5, -44, 13, -43, 16, -38, 14, -32, 28, -27, 33, -19, 38, -17, 46, -1, 45, 9, 39, 20, 38, 26, 32, 32, 16, 43, 8, 44, 3, 43, -3, 44, -12, 42, -22, 37, -29, 30, -33, 23, -33, 21, -38, 11, -37, -2, -33, -7, -32, -13, -41, -24)
 
 [node name="DetectionArea" type="Area2D" parent="."]
-visible = false
-collision_layer = 2
 collision_mask = 2
 gravity_point = true
 gravity_point_center = Vector2(0, 0)
 gravity_direction = Vector2(0, 0)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DetectionArea"]
-visible = false
 position = Vector2(-0.698858, 0)
 scale = Vector2(1.34943, 1.34943)
 polygon = PackedVector2Array(-42, -27, -37, -33, -26, -40, -17, -44, 13, -43, 28, -27, 34.081, -21.3873, 38, -17, 46, -1, 45, 9, 38, 26, 32, 32, 16, 43, 8, 44, -3, 44, -12, 42, -22, 37, -29, 30, -33, 23, -38, 11)
