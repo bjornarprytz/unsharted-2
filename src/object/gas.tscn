@@ -41,9 +41,9 @@ shader_parameter/vignette = SubResource("GradientTexture2D_272jp")
 
 [node name="Gas" type="Area2D"]
 position = Vector2(585, 553)
-gravity_space_override = 3
-gravity_point_center = Vector2(0, -10)
-gravity_direction = Vector2(0, -10)
+collision_layer = 16
+gravity_point_center = Vector2(0, 0)
+gravity_direction = Vector2(0, 0)
 script = ExtResource("1_po5np")
 
 [node name="Shape" type="CollisionShape2D" parent="."]
@@ -61,3 +61,6 @@ offset_right = 139.0
 offset_bottom = 31.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

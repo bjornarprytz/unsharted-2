@@ -1,11 +1,11 @@
 [gd_scene load_steps=32 format=3 uid="uid://dhgh2cea5xa1y"]
 
 [ext_resource type="Script" path="res://object/the_poop.gd" id="1_bgfqd"]
-[ext_resource type="Texture2D" uid="uid://dove6iq1y07vf" path="res://assets/spritemaps/smallidle.png" id="2_5b7o5"]
-[ext_resource type="Texture2D" uid="uid://cns1854f8ov4v" path="res://assets/spritemaps/smallsmash_falling.png" id="2_nk72p"]
-[ext_resource type="Texture2D" uid="uid://bu275m8eav5lk" path="res://assets/spritemaps/T_poo_small_munch.png" id="3_shgh8"]
-[ext_resource type="Texture2D" uid="uid://dreefrc7myvu8" path="res://assets/spritemaps/smallsmash_impact.png" id="4_kxdg8"]
-[ext_resource type="Texture2D" uid="uid://d2b8qwfkcmvaf" path="res://assets/spritemaps/smallsmash_windup.png" id="6_6ucfl"]
+[ext_resource type="Texture2D" uid="uid://b1b325d70n2ul" path="res://assets/spritemaps/smallidle.png" id="2_5b7o5"]
+[ext_resource type="Texture2D" uid="uid://cfxht7ciwh75w" path="res://assets/spritemaps/smallsmash_falling.png" id="2_nk72p"]
+[ext_resource type="Texture2D" uid="uid://cbpgkd8fpgv1y" path="res://assets/spritemaps/T_poo_small_munch.png" id="3_shgh8"]
+[ext_resource type="Texture2D" uid="uid://d5gt1u4ch61c" path="res://assets/spritemaps/smallsmash_impact.png" id="4_kxdg8"]
+[ext_resource type="Texture2D" uid="uid://j74i03jkkd5y" path="res://assets/spritemaps/smallsmash_windup.png" id="6_6ucfl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u6mfj"]
 atlas = ExtResource("2_nk72p")

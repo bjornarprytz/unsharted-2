@@ -32,8 +32,7 @@ func _process(delta):
 		#apply_impulse(Vector2.RIGHT * force)
 
 func _physics_process(delta: float) -> void:
-	print(linear_velocity)
-	print(angular_velocity)
+	pass
 
 func _on_detection_area_area_entered(area: Area2D) -> void:
 	var thing = area.owner

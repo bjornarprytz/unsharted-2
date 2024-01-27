@@ -21,6 +21,8 @@ Global="*res://autoload/global.tscn"
 
 [display]
 
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/size/resizable=false
 window/stretch/mode="viewport"
 
@@ -57,6 +59,7 @@ down={
 2d_physics/layer_2="mini_poop"
 2d_physics/layer_3="wall"
 2d_physics/layer_4="PlayerBorder"
+2d_physics/layer_5="Gas"
 
 [rendering]
 
