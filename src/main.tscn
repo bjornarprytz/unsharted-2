@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dhgh2cea5xa1y" path="res://object/the_poop.tscn" id="1_4fu6l"]
 [ext_resource type="Script" path="res://main.gd" id="1_rtgrn"]
 [ext_resource type="Script" path="res://OutsideWorld.gd" id="3_v7gnd"]
-[ext_resource type="PackedScene" uid="uid://dlu4ixapsk1iw" path="res://object/gas.tscn" id="4_60dpx"]
+[ext_resource type="PackedScene" uid="uid://qgjhw8r2elro" path="res://object/gas.tscn" id="4_60dpx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6qvjl"]
 size = Vector2(43, 500.25)
@@ -50,6 +50,7 @@ metadata/_edit_lock_ = true
 polygon = PackedVector2Array(442, 480, 488, 534, 577, 568, 577, 607, 444, 543)
 
 [node name="Polygon2D" type="Polygon2D" parent="LeftBottom"]
+z_index = 1
 polygon = PackedVector2Array(442, 480, 488, 534, 577, 568, 577, 607, 444, 543)
 
 [node name="RightBottom" type="StaticBody2D" parent="."]
@@ -62,6 +63,7 @@ position = Vector2(242, 0)
 polygon = PackedVector2Array(434, 544, 488, 481, 499, 551, 379, 603, 379, 565)
 
 [node name="Polygon2D" type="Polygon2D" parent="RightBottom"]
+z_index = 1
 position = Vector2(242, 0)
 polygon = PackedVector2Array(434, 544, 488, 481, 499, 551, 379, 603, 379, 565)
 
