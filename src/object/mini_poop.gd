@@ -7,6 +7,3 @@ extends Node2D
 
 func flush():
 	poop.apply_impulse(Vector2.DOWN * 400.0)
-
-func _exit_tree() -> void:
-	Global.munch_effect()

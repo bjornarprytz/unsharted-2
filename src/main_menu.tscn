@@ -188,7 +188,7 @@ texture = ExtResource("4_tdmsu")
 [node name="Label" type="Label" parent="UI/Controls/HBoxContainer3"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "- Hold to Smash down"
+text = "- Smash down and release"
 horizontal_alignment = 1
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="UI"]
