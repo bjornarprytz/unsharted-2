@@ -55,21 +55,28 @@ func _smash() -> void:
 	
 	var tween = create_tween()
 	tween.tween_property(self, "rotation", 0.0, 0.3)
-	animation.play("Windup"+_animation_postfix())
-	await animation.animation_finished                                   
+	await tween.finished
 	if aborted_smash:
 		aborted_smash = false
 		smashing = false
 		sleeping = false
 		return
 	
+	_windup_animation()
+	
+	await get_tree().create_timer(2.0).timeout
+	
 	apply_impulse(Vector2.DOWN * 30.0)
-	animation.play("Fall"+_animation_postfix())
-	await animation.animation_finished
 	
 	Global.Fart.emit(linear_velocity.length() + Global.gas_volume)
 	smashing = false
 	sleeping = false
+
+func _windup_animation():
+	animation.play("Windup"+_animation_postfix())
+	await animation.animation_finished      
+	animation.play("Fall"+_animation_postfix())
+	await animation.animation_finished
 
 func _on_detection_area_area_entered(area: Area2D) -> void:
 	var thing = area.owner
@@ -83,9 +90,6 @@ func _on_detection_area_area_entered(area: Area2D) -> void:
 		tween.tween_property(thing, "modulate:a", 0.0, .5)
 		tween.tween_callback(thing.queue_free)
 		Global.PoopConsumed.emit()
-		
-		if (target_scale.x > 1.2):
-			pass
 
 func _animation_postfix() -> String:
 	if (target_scale.x > 1.3):

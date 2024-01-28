@@ -10,7 +10,7 @@ func _ready() -> void:
 	Global.PoopConsumed.connect(_change_height.bind(10.0))
 
 func deflate():
-	_change_height(visual.size.y)
+	_change_height(-visual.size.y)
 
 func _change_height(amount: float):
 	shape.position.y -= (amount / 2.0)
