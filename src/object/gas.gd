@@ -3,6 +3,7 @@ extends Area2D
 
 @onready var shape : CollisionShape2D = $Shape
 @onready var visual : ColorRect = $Visual
+@onready var anchor : Vector2 = self.position
 
 @export var bounce_force = 3000
 
@@ -10,7 +11,12 @@ func _ready() -> void:
 	Global.PoopConsumed.connect(_change_height.bind(10.0))
 
 func deflate():
+	var tween = create_tween()
+	tween.tween_property(self, "position:y", 1000.0, 2.0)
+	await tween.finished
+	
 	_change_height(-visual.size.y)
+	position = anchor
 
 func _change_height(amount: float):
 	shape.position.y -= (amount / 2.0)
