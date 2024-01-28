@@ -1,44 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://qgjhw8r2elro"]
+[gd_scene load_steps=3 format=3 uid="uid://qgjhw8r2elro"]
 
 [ext_resource type="Script" path="res://object/gas.gd" id="1_po5np"]
-[ext_resource type="Shader" path="res://Shaders/gas_shader.gdshader" id="2_btf2g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s4dj0"]
 size = Vector2(680, 52.125)
-
-[sub_resource type="Gradient" id="Gradient_cjwam"]
-offsets = PackedFloat32Array(0.0244648, 1)
-colors = PackedColorArray(0.0295066, 0.0295066, 0.0295066, 1, 0.964742, 0.964742, 0.964742, 1)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_jm5uy"]
-domain_warp_enabled = true
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_v3jrg"]
-seamless = true
-seamless_blend_skirt = 0.5
-color_ramp = SubResource("Gradient_cjwam")
-noise = SubResource("FastNoiseLite_jm5uy")
-
-[sub_resource type="Gradient" id="Gradient_bcdm3"]
-interpolation_mode = 2
-offsets = PackedFloat32Array(0, 0.2263, 0.844037, 1)
-colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_vxmqu"]
-gradient = SubResource("Gradient_bcdm3")
-fill_from = Vector2(0.5, 1)
-fill_to = Vector2(0.5, 0)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_55rh1"]
-shader = ExtResource("2_btf2g")
-shader_parameter/base = Color(0.8, 1, 0.25098, 0.862745)
-shader_parameter/fps = 15.0
-shader_parameter/PanY = 0.04
-shader_parameter/PanX = null
-shader_parameter/grain_strength = 0.5
-shader_parameter/stretch = 0.5
-shader_parameter/grain = SubResource("NoiseTexture2D_v3jrg")
-shader_parameter/vignette = SubResource("GradientTexture2D_vxmqu")
 
 [node name="Gas" type="Area2D"]
 position = Vector2(585, 553)
@@ -53,7 +18,6 @@ shape = SubResource("RectangleShape2D_s4dj0")
 
 [node name="Visual" type="ColorRect" parent="."]
 process_priority = -1
-material = SubResource("ShaderMaterial_55rh1")
 offset_left = -334.0
 offset_top = -21.0
 offset_right = 342.0

@@ -1,16 +1,15 @@
-[gd_scene load_steps=71 format=3 uid="uid://c2mlb2ngd4rr0"]
+[gd_scene load_steps=70 format=3 uid="uid://c2mlb2ngd4rr0"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_307pf"]
-[ext_resource type="AudioStream" uid="uid://bdgugphtadxoq" path="res://assets/audio/unsharted2.wav" id="2_15xlf"]
-[ext_resource type="FontFile" uid="uid://bmshoge7tib7u" path="res://assets/fonts/HalloweenSlime.otf" id="3_d4j24"]
-[ext_resource type="Texture2D" uid="uid://cxrjf3jc73tr7" path="res://assets/keys/A_Key_Light.png" id="4_fs6yj"]
-[ext_resource type="Texture2D" uid="uid://cthaq0md6lrmj" path="res://assets/keys/Space_Key_Light.png" id="4_tdmsu"]
-[ext_resource type="Texture2D" uid="uid://cphamexapy0e7" path="res://assets/keys/D_Key_Light.png" id="5_0npd0"]
+[ext_resource type="FontFile" uid="uid://b6sofv2e2i4db" path="res://assets/fonts/HalloweenSlime.otf" id="3_d4j24"]
+[ext_resource type="Texture2D" uid="uid://bk1jk0vkxn22t" path="res://assets/keys/A_Key_Light.png" id="4_fs6yj"]
+[ext_resource type="Texture2D" uid="uid://bul8yqrogv8pi" path="res://assets/keys/Space_Key_Light.png" id="4_tdmsu"]
+[ext_resource type="Texture2D" uid="uid://d3d10xc0jrg6x" path="res://assets/keys/D_Key_Light.png" id="5_0npd0"]
 [ext_resource type="Texture2D" uid="uid://dpl7l5dxpj547" path="res://assets/spritemaps/smallidle.png" id="8_c2u7d"]
 [ext_resource type="Texture2D" uid="uid://bkjw8ojs10jfn" path="res://assets/spritemaps/T_poo_small_munch.png" id="8_luig8"]
 [ext_resource type="Texture2D" uid="uid://7tmasvgif5ux" path="res://assets/T_poo_chunk.png" id="9_ncj00"]
-[ext_resource type="Texture2D" uid="uid://bcy2p3o7tn3nf" path="res://assets/spritemaps/drake_tacobell.png" id="10_xa7yl"]
-[ext_resource type="Texture2D" uid="uid://ccsbhdgfr1nhd" path="res://assets/tacobell.png" id="11_6p5ma"]
+[ext_resource type="Texture2D" uid="uid://bwj1aymx4kinf" path="res://assets/spritemaps/drake_tacobell.png" id="10_xa7yl"]
+[ext_resource type="Texture2D" uid="uid://c3c3ulq3dmehs" path="res://assets/tacobell.png" id="11_6p5ma"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0kg3b"]
 atlas = ExtResource("8_c2u7d")
@@ -432,10 +431,6 @@ animations = [{
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_307pf")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_15xlf")
-autoplay = true
 
 [node name="BGColor" type="ColorRect" parent="."]
 offset_right = 1280.0
