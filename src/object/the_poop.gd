@@ -7,7 +7,7 @@ extends RigidBody2D
 @onready var detection_shape : Node2D = $DetectionArea/Shape
 @onready var poop_shape : Node2D = $Shape
 
-const force : float = 1000.0
+const force : float = 69000.0
 
 var size: int = 0
 var target_scale: Vector2 = Vector2.ONE
@@ -49,6 +49,7 @@ func _physics_process(delta):
 var smash_timer : SceneTreeTimer
 var aborted_smash : bool
 var smashing: bool
+var is_going_down: bool
 
 func _abort_smash():
 	animation.stop()
@@ -72,11 +73,20 @@ func _smash() -> void:
 		sleeping = false
 		return
 	
+	is_going_down = true
+	var a = detection_area.get_overlapping_areas()
+	for area in a:
+		if area.owner is Gas:
+			area.owner.deflate()
+			is_going_down = false
+	
 	_windup_animation()
 	
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(1.0).timeout
 	
 	apply_impulse(Vector2.DOWN * 30.0)
+	
+	
 	
 	Global.Fart.emit(linear_velocity.length() + Global.gas_volume)
 	smashing = false
@@ -90,6 +100,9 @@ func _windup_animation():
 
 func _on_detection_area_area_entered(area: Area2D) -> void:
 	var thing = area.owner
+	if area is Gas and is_going_down:
+		area.deflate()
+		is_going_down = false
 	if thing is MiniPoop:
 		thing.poop.sleeping = true
 		thing.poop.gravity_scale = 0.0

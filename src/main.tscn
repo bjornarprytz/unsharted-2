@@ -129,3 +129,5 @@ position = Vector2(632, 816)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TheOutside"]
 shape = SubResource("WorldBoundaryShape2D_ru7lt")
+
+[connection signal="area_entered" from="TheOutside" to="." method="_on_the_outside_area_entered"]
