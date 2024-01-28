@@ -37,13 +37,12 @@ metadata/_edit_use_anchors_ = true
 
 [node name="LeftWallCollider" type="StaticBody2D" parent="LeftWall"]
 position = Vector2(583, 608)
-collision_layer = 3
-collision_mask = 0
-metadata/_edit_lock_ = true
+collision_layer = 4
+collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LeftWall/LeftWallCollider"]
 position = Vector2(-514, -622)
-polygon = PackedVector2Array(515, 606, 355, 526, 243, 398, 267, 182, 371, 118, 387, 14, 123, 14, 123, 606)
+polygon = PackedVector2Array(515, 606, 355, 526, 243, 398, 267, 182, 371, 118, 387, 14, 187, 14, 187, 606)
 
 [node name="RightWall" type="Node2D" parent="."]
 
@@ -59,8 +58,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="RightBottomCollider" type="StaticBody2D" parent="RightWall/RightWallTexture"]
 position = Vector2(104, 608)
-collision_layer = 3
-collision_mask = 0
+collision_layer = 4
+collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RightWall/RightWallTexture/RightBottomCollider"]
 polygon = PackedVector2Array(-56, -8, 112, -88, 208, -224, 192, -408, 96, -496, 64, -608, 264, -608, 256, -16)
