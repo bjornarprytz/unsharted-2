@@ -49,21 +49,21 @@ func _abort_smash():
 func _smash() -> void:
 	if smashing:
 		return
-	smashing = true
+	smashing = true             
 	aborted_smash = false
 	sleeping = true
 	
 	var tween = create_tween()
 	tween.tween_property(self, "rotation", 0.0, 0.3)
 	animation.play("Windup"+_animation_postfix())
-	await animation.animation_finished
+	await animation.animation_finished                                   
 	if aborted_smash:
 		aborted_smash = false
 		smashing = false
 		sleeping = false
 		return
 	
-	apply_impulse(Vector2.DOWN * 20.0)
+	apply_impulse(Vector2.DOWN * 30.0)
 	animation.play("Fall"+_animation_postfix())
 	await animation.animation_finished
 	

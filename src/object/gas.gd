@@ -6,15 +6,18 @@ extends Area2D
 
 @export var bounce_force = 3000
 
-
 func _ready() -> void:
 	Global.PoopConsumed.connect(_change_height.bind(10.0))
+
+func deflate():
+	_change_height(visual.size.y)
 
 func _change_height(amount: float):
 	shape.position.y -= (amount / 2.0)
 	shape.shape.size.y += amount
 	visual.position.y -= amount
 	visual.size.y += amount
+	Global.gas_volume += amount
 
 func _on_body_entered(body):
 	if body.name == "ThePoop":

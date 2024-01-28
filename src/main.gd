@@ -46,10 +46,11 @@ func fart(magnitude: float):
 	ass_sounds.stream = fart_sounds.pick_random()
 	# TODO: Fart sound depending on gas volume
 	ass_sounds.play()
-	# Clear out the gas
 	anus.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	get_tree().call_group("MiniPoops", "flush")
-	# Eject Poop (disable anus)
-	# If player is ejected, game over
-	# Otherwise, close anus and resume
+	gas.deflate()
+	
+	await get_tree().create_timer(4.0).timeout
+	
+	anus.process_mode = Node.PROCESS_MODE_INHERIT
