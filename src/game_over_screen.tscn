@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7qxejfn7ao0s"]
+[gd_scene load_steps=5 format=3 uid="uid://c7qxejfn7ao0s"]
 
 [ext_resource type="Script" path="res://GameOverScreen.gd" id="1_m2ob3"]
 [ext_resource type="FontFile" uid="uid://bmshoge7tib7u" path="res://assets/fonts/HalloweenSlime.otf" id="2_p5vpw"]
 [ext_resource type="Texture2D" uid="uid://cthaq0md6lrmj" path="res://assets/keys/Space_Key_Light.png" id="3_ln24j"]
+[ext_resource type="Texture2D" uid="uid://i6lbs8ijw0a6" path="res://assets/gameover.png" id="4_h5jet"]
 
 [node name="GameOverScreen" type="Node2D"]
 script = ExtResource("1_m2ob3")
@@ -15,21 +16,35 @@ color = Color(0.109804, 0.101961, 0.235294, 1)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GameOver" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -375.0
+offset_top = 200.0
+offset_right = 375.0
+offset_bottom = 379.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.607843, 0.490196, 0.286275, 1)
+theme_override_fonts/font = ExtResource("2_p5vpw")
+theme_override_font_sizes/font_size = 200
+text = "GAME OVER"
+
+[node name="Score" type="Label" parent="CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -154.0
+offset_top = 40.0
+offset_right = 154.0
+offset_bottom = 130.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.607843, 0.490196, 0.286275, 1)
 theme_override_fonts/font = ExtResource("2_p5vpw")
-theme_override_font_sizes/font_size = 200
-text = "GAME OVER"
+theme_override_font_sizes/font_size = 100
+text = "Score: 0"
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer"]
 anchors_preset = 7
@@ -37,10 +52,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -150.5
-offset_top = -220.0
-offset_right = 150.5
-offset_bottom = -120.0
+offset_left = -189.0
+offset_top = -168.0
+offset_right = 189.0
+offset_bottom = -68.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -59,3 +74,15 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "to play again!"
 horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 768.0
+offset_top = 432.0
+offset_right = 2048.0
+offset_bottom = 1152.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("4_h5jet")
+
+[node name="AssAudio" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(663, 657)
+volume_db = 15.0
