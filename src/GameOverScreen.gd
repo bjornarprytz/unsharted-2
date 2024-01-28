@@ -18,6 +18,8 @@ func _ready():
 	ass_sounds.stream = fart_sounds.pick_random()
 	ass_sounds.play()
 	
+	score_label.text = "Score: " + str(Global.score)
+	
 func _input(event):
 	if (event is InputEventKey and event.keycode == KEY_SPACE and event.is_pressed()):
 		get_tree().change_scene_to_file("res://main.tscn")
