@@ -2,12 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://dhgh2cea5xa1y" path="res://object/the_poop.tscn" id="1_4fu6l"]
 [ext_resource type="Script" path="res://main.gd" id="1_rtgrn"]
-[ext_resource type="Texture2D" uid="uid://4xdvy6tg7u4p" path="res://assets/background_left_wall.png" id="2_lb2te"]
-[ext_resource type="Texture2D" uid="uid://4bxprrgxhhki" path="res://assets/background_right_wall.png" id="3_s8l56"]
+[ext_resource type="Texture2D" uid="uid://cot8qm14odfff" path="res://assets/background_left_wall.png" id="2_lb2te"]
+[ext_resource type="Texture2D" uid="uid://chjuod34lx48o" path="res://assets/background_right_wall.png" id="3_s8l56"]
 [ext_resource type="PackedScene" uid="uid://qgjhw8r2elro" path="res://object/gas.tscn" id="4_60dpx"]
 [ext_resource type="Script" path="res://object/PoopCounter.gd" id="5_ls5re"]
-[ext_resource type="Texture2D" uid="uid://b2hluq4nbrt6v" path="res://assets/borthole_back.png" id="5_t0bdx"]
-[ext_resource type="Texture2D" uid="uid://dde8mfgx0rg4k" path="res://assets/borthole_front.png" id="6_aapi6"]
+[ext_resource type="Texture2D" uid="uid://hqbxpu4ycbu0" path="res://assets/borthole_back.png" id="5_t0bdx"]
+[ext_resource type="Texture2D" uid="uid://7eeyatrha6kd" path="res://assets/borthole_front.png" id="6_aapi6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4tphv"]
 radius = 40.0

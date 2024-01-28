@@ -4,7 +4,7 @@ extends Node2D
 enum Outcome{
 	Assphxiation,
 	Ejection,
-	Victory
+	Constapation
 }
 
 signal GameOver(outcome: GlobalSingleton.Outcome)

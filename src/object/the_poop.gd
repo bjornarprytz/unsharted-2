@@ -29,12 +29,21 @@ func _physics_process(delta):
 		_abort_smash()
 	
 	var bodies = get_colliding_bodies()
+	var hit_left : bool
+	var hit_right : bool
 	for b in bodies:
+		if (b.name == "LeftBottomCollider"):
+			hit_left = true
+		if (b.name == "RightBottomCollider"):
+			hit_right = true
+		
 		if b.name == "PlayerBarrier":
 			var areas = detection_area.get_overlapping_areas()
 			for a in areas:
 				if a.name == "Gas":
 					Global.GameOver.emit(GlobalSingleton.Outcome.Assphxiation)
+	if (hit_left and hit_right):
+		Global.GameOver.emit(GlobalSingleton.Outcome.Constapation)
 
 var smash_timer : SceneTreeTimer
 var aborted_smash : bool
