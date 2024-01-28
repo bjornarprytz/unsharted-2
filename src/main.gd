@@ -49,6 +49,8 @@ func fart(magnitude: float):
 	anus.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	get_tree().call_group("MiniPoops", "flush")
+	if Global.gas_volume > 0:
+		Global.score += Global.gas_volume/10
 	gas.deflate()
 	
 	await get_tree().create_timer(4.0).timeout

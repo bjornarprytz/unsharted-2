@@ -1,14 +1,14 @@
 [gd_scene load_steps=20 format=3 uid="uid://c2mlb2ngd4rr0"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_307pf"]
-[ext_resource type="AudioStream" uid="uid://byq66bg8qpbsy" path="res://assets/audio/unsharted2.wav" id="2_15xlf"]
-[ext_resource type="FontFile" uid="uid://b0kox2qoje8n5" path="res://assets/fonts/HalloweenSlime.otf" id="3_d4j24"]
-[ext_resource type="Texture2D" uid="uid://dx2xknf06i5al" path="res://assets/keys/A_Key_Light.png" id="4_fs6yj"]
-[ext_resource type="Texture2D" uid="uid://coonql0f2x306" path="res://assets/keys/Space_Key_Light.png" id="4_tdmsu"]
-[ext_resource type="Texture2D" uid="uid://d36oxkwxy7bny" path="res://assets/keys/D_Key_Light.png" id="5_0npd0"]
-[ext_resource type="Texture2D" uid="uid://bx25l6b1f2mke" path="res://assets/spritemaps/smallidle.png" id="8_c2u7d"]
-[ext_resource type="Texture2D" uid="uid://bh1atiry2xcnu" path="res://assets/spritemaps/T_poo_small_munch.png" id="8_luig8"]
-[ext_resource type="Texture2D" uid="uid://cs34uglo0583q" path="res://assets/T_poo_chunk.png" id="9_ncj00"]
+[ext_resource type="AudioStream" uid="uid://bdgugphtadxoq" path="res://assets/audio/unsharted2.wav" id="2_15xlf"]
+[ext_resource type="FontFile" uid="uid://bmshoge7tib7u" path="res://assets/fonts/HalloweenSlime.otf" id="3_d4j24"]
+[ext_resource type="Texture2D" uid="uid://cxrjf3jc73tr7" path="res://assets/keys/A_Key_Light.png" id="4_fs6yj"]
+[ext_resource type="Texture2D" uid="uid://cthaq0md6lrmj" path="res://assets/keys/Space_Key_Light.png" id="4_tdmsu"]
+[ext_resource type="Texture2D" uid="uid://cphamexapy0e7" path="res://assets/keys/D_Key_Light.png" id="5_0npd0"]
+[ext_resource type="Texture2D" uid="uid://dpl7l5dxpj547" path="res://assets/spritemaps/smallidle.png" id="8_c2u7d"]
+[ext_resource type="Texture2D" uid="uid://bkjw8ojs10jfn" path="res://assets/spritemaps/T_poo_small_munch.png" id="8_luig8"]
+[ext_resource type="Texture2D" uid="uid://7tmasvgif5ux" path="res://assets/T_poo_chunk.png" id="9_ncj00"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0kg3b"]
 atlas = ExtResource("8_c2u7d")
@@ -91,11 +91,10 @@ script = ExtResource("1_307pf")
 stream = ExtResource("2_15xlf")
 autoplay = true
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="BGColor" type="ColorRect" parent="."]
 offset_right = 1280.0
 offset_bottom = 720.0
-color = Color(0.415686, 0.52549, 0.258824, 1)
-metadata/_edit_lock_ = true
+color = Color(0.109804, 0.101961, 0.235294, 1)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -114,7 +113,7 @@ grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("3_d4j24")
 theme_override_font_sizes/normal_font_size = 200
 bbcode_enabled = true
-text = "[center][color=white]UN[color=brown]SHART[color=white]ED [color=brown]
+text = "[center][color=white]UN[color=9b7d49]SHART[color=white]ED [color=9b7d49]
 2[/color]"
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="UI"]

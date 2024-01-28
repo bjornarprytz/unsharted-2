@@ -254,7 +254,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Fall_Medium",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -282,7 +282,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle_Medium",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -308,7 +308,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lp842")
 }],
-"loop": true,
+"loop": false,
 "name": &"Impact_Medium",
 "speed": 5.0
 }, {
@@ -356,7 +356,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Munch_Medium",
-"speed": 5.0
+"speed": 16.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -403,9 +403,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fjp3i")
 }],
-"loop": true,
+"loop": false,
 "name": &"Windup_Medium",
-"speed": 5.0
+"speed": 12.0
 }]
 
 [node name="Poop" type="RigidBody2D"]
@@ -419,7 +419,7 @@ script = ExtResource("1_bgfqd")
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_qvfya")
-animation = &"Windup"
+animation = &"Fall_Medium"
 autoplay = "Idle"
 
 [node name="Shape" type="CollisionPolygon2D" parent="."]

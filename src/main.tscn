@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cdqjsqe31jql2"]
+[gd_scene load_steps=15 format=3 uid="uid://cdqjsqe31jql2"]
 
 [ext_resource type="PackedScene" uid="uid://dhgh2cea5xa1y" path="res://object/the_poop.tscn" id="1_4fu6l"]
 [ext_resource type="Script" path="res://main.gd" id="1_rtgrn"]
@@ -6,8 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://uwh5gjf8v83w" path="res://assets/background_right_wall.png" id="3_s8l56"]
 [ext_resource type="PackedScene" uid="uid://qgjhw8r2elro" path="res://object/gas.tscn" id="4_60dpx"]
 [ext_resource type="Script" path="res://object/PoopCounter.gd" id="5_ls5re"]
-[ext_resource type="Texture2D" uid="uid://c0pidr12sbx7a" path="res://assets/borthole_back.png" id="5_t0bdx"]
-[ext_resource type="Texture2D" uid="uid://bvu6bgsev4tlk" path="res://assets/borthole_front.png" id="6_aapi6"]
+[ext_resource type="Texture2D" uid="uid://b2hluq4nbrt6v" path="res://assets/borthole_back.png" id="5_t0bdx"]
+[ext_resource type="Texture2D" uid="uid://dde8mfgx0rg4k" path="res://assets/borthole_front.png" id="6_aapi6"]
+[ext_resource type="FontFile" uid="uid://bmshoge7tib7u" path="res://assets/fonts/HalloweenSlime.otf" id="8_cog0l"]
+[ext_resource type="Texture2D" uid="uid://cxrjf3jc73tr7" path="res://assets/keys/A_Key_Light.png" id="10_xfjir"]
+[ext_resource type="Texture2D" uid="uid://cphamexapy0e7" path="res://assets/keys/D_Key_Light.png" id="11_n6qtl"]
+[ext_resource type="Texture2D" uid="uid://cthaq0md6lrmj" path="res://assets/keys/Space_Key_Light.png" id="12_4bll5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4tphv"]
 radius = 40.0
@@ -105,17 +109,6 @@ mouse_filter = 2
 color = Color(1, 1, 1, 0)
 metadata/_edit_use_anchors_ = true
 
-[node name="ControlsDescription" type="RichTextLabel" parent="."]
-offset_left = 60.0
-offset_top = 70.0
-offset_right = 296.0
-offset_bottom = 391.0
-text = "Controls
-
-A/D : Left/Right
-Space: Downward smash"
-metadata/_edit_use_anchors_ = true
-
 [node name="PlayerBarrier" type="StaticBody2D" parent="."]
 position = Vector2(668, -63)
 collision_layer = 8
@@ -125,10 +118,86 @@ position = Vector2(-4, -21.25)
 shape = SubResource("RectangleShape2D_va0ss")
 one_way_collision_margin = 50.0
 
-[node name="ScoreLabel" type="Label" parent="."]
-offset_left = 883.0
-offset_top = 129.0
-offset_right = 1053.0
-offset_bottom = 258.0
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="ScoreBG" type="ColorRect" parent="HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -192.0
+offset_bottom = 40.0
+grow_horizontal = 0
+color = Color(0.109804, 0.101961, 0.235294, 0.501961)
+
+[node name="ControlsBG" type="ColorRect" parent="HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1280.0
+offset_top = 1.0
+offset_right = -1056.0
+offset_bottom = 288.0
+grow_horizontal = 0
+color = Color(0.109804, 0.101961, 0.235294, 0.501961)
+
+[node name="ScoreLabel" type="Label" parent="HUD"]
+anchors_preset = -1
+anchor_top = -0.248611
+anchor_right = 0.0171875
+anchor_bottom = -0.248611
+offset_left = 1088.0
+offset_top = 131.0
+offset_right = 1258.0
+offset_bottom = 260.0
+theme_override_fonts/font = ExtResource("8_cog0l")
+theme_override_font_sizes/font_size = 30
+text = "Score: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
 script = ExtResource("5_ls5re")
 metadata/_edit_use_anchors_ = true
+
+[node name="Controls" type="VBoxContainer" parent="HUD"]
+offset_top = 1.0
+offset_right = 232.0
+offset_bottom = 309.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/Controls"]
+layout_mode = 2
+
+[node name="A_key" type="TextureRect" parent="HUD/Controls/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("10_xfjir")
+
+[node name="Label" type="Label" parent="HUD/Controls/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "- Move left"
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HUD/Controls"]
+layout_mode = 2
+
+[node name="D_key" type="TextureRect" parent="HUD/Controls/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("11_n6qtl")
+
+[node name="Label" type="Label" parent="HUD/Controls/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "- Move right
+"
+horizontal_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="HUD/Controls"]
+layout_mode = 2
+
+[node name="Space_key" type="TextureRect" parent="HUD/Controls/HBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("12_4bll5")
+
+[node name="Label" type="Label" parent="HUD/Controls/HBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "- Smash"
+horizontal_alignment = 1

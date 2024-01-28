@@ -6,7 +6,7 @@ extends RigidBody2D
 @onready var detection_shape : Node2D = $DetectionArea/Shape
 @onready var poop_shape : Node2D = $Shape
 
-const force : float = 1000.0
+const force : float = 3000.0
 
 var size: int = 0
 var target_scale: Vector2 = Vector2.ONE
@@ -41,10 +41,11 @@ var aborted_smash : bool
 var smashing: bool
 
 func _abort_smash():
-	animation.stop()
+	animation.play("Impact" + _animation_postfix())
 	aborted_smash = true
 	smashing = false
 	sleeping = false
+	lock_rotation = false
 
 func _smash() -> void:
 	if smashing:
@@ -53,13 +54,16 @@ func _smash() -> void:
 	aborted_smash = false
 	sleeping = true
 	
-	var tween = create_tween()
-	tween.tween_property(self, "rotation", 0.0, 0.3)
-	await tween.finished
+	#var tween = create_tween()
+	#tween.tween_property(self, "rotation", 0.0, 0.3)
+	#await tween.finished
+	rotation_degrees = 0
+	lock_rotation = true
 	if aborted_smash:
 		aborted_smash = false
 		smashing = false
 		sleeping = false
+		lock_rotation = false
 		return
 	
 	_windup_animation()
@@ -76,7 +80,7 @@ func _windup_animation():
 	animation.play("Windup"+_animation_postfix())
 	await animation.animation_finished      
 	animation.play("Fall"+_animation_postfix())
-	await animation.animation_finished
+
 
 func _on_detection_area_area_entered(area: Area2D) -> void:
 	var thing = area.owner
@@ -84,7 +88,8 @@ func _on_detection_area_area_entered(area: Area2D) -> void:
 		thing.poop.sleeping = true
 		thing.poop.gravity_scale = 0.0
 		thing.reparent.call_deferred(self)
-		animation.play("Munch"+_animation_postfix())
+		if !smashing:
+			animation.play("Munch"+_animation_postfix())
 		var tween = create_tween()
 		target_scale += (Vector2.ONE * .02)
 		tween.tween_property(thing, "modulate:a", 0.0, .5)
