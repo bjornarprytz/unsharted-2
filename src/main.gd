@@ -4,7 +4,7 @@ extends Node2D
 
 @onready var spawn_area : ColorRect = $MiniPoopSpawn
 
-@onready var anus : StaticBody2D = $Anus
+@onready var anus : StaticBody2D = $Anus/AnusCollider
 
 @onready var gas : Gas = $Gas
 @onready var ass_sounds : AudioStreamPlayer2D = $AssAudio

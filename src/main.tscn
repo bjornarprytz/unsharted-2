@@ -1,20 +1,17 @@
-[gd_scene load_steps=10 format=3 uid="uid://dyixng3tfgjn2"]
+[gd_scene load_steps=11 format=3 uid="uid://cdqjsqe31jql2"]
 
 [ext_resource type="PackedScene" uid="uid://dhgh2cea5xa1y" path="res://object/the_poop.tscn" id="1_4fu6l"]
 [ext_resource type="Script" path="res://main.gd" id="1_rtgrn"]
-[ext_resource type="Texture2D" uid="uid://d3u25a58keqjl" path="res://assets/background.png" id="2_ce6sq"]
+[ext_resource type="Texture2D" uid="uid://4xdvy6tg7u4p" path="res://assets/background_left_wall.png" id="2_lb2te"]
+[ext_resource type="Texture2D" uid="uid://4bxprrgxhhki" path="res://assets/background_right_wall.png" id="3_s8l56"]
 [ext_resource type="PackedScene" uid="uid://qgjhw8r2elro" path="res://object/gas.tscn" id="4_60dpx"]
 [ext_resource type="Script" path="res://object/PoopCounter.gd" id="5_ls5re"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i78he"]
-size = Vector2(43, 753)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujeif"]
-size = Vector2(43, 752)
+[ext_resource type="Texture2D" uid="uid://b2hluq4nbrt6v" path="res://assets/borthole_back.png" id="5_t0bdx"]
+[ext_resource type="Texture2D" uid="uid://dde8mfgx0rg4k" path="res://assets/borthole_front.png" id="6_aapi6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4tphv"]
-radius = 32.0
-height = 144.0
+radius = 40.0
+height = 192.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_va0ss"]
 size = Vector2(488, 122.5)
@@ -22,56 +19,75 @@ size = Vector2(488, 122.5)
 [node name="Game" type="Node2D"]
 script = ExtResource("1_rtgrn")
 
-[node name="BG" type="TextureRect" parent="."]
+[node name="BGColor" type="ColorRect" parent="."]
 offset_right = 1280.0
 offset_bottom = 720.0
-texture = ExtResource("2_ce6sq")
+color = Color(0.109804, 0.101961, 0.235294, 1)
+
+[node name="Gas" parent="." instance=ExtResource("4_60dpx")]
+position = Vector2(667, 606)
+
+[node name="LeftWall" type="Node2D" parent="."]
+
+[node name="LeftWallTexture" type="TextureRect" parent="LeftWall"]
+offset_right = 640.0
+offset_bottom = 720.0
+texture = ExtResource("2_lb2te")
 metadata/_edit_use_anchors_ = true
 
-[node name="LeftWall" type="StaticBody2D" parent="."]
-collision_layer = 3
-collision_mask = 0
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
-position = Vector2(496, 231.5)
-shape = SubResource("RectangleShape2D_i78he")
-
-[node name="RightWall" type="StaticBody2D" parent="."]
-collision_layer = 3
-collision_mask = 0
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
-position = Vector2(829, 232)
-shape = SubResource("RectangleShape2D_ujeif")
-
-[node name="LeftBottom" type="StaticBody2D" parent="."]
+[node name="LeftWallCollider" type="StaticBody2D" parent="LeftWall"]
 position = Vector2(583, 608)
 collision_layer = 3
 collision_mask = 0
 metadata/_edit_lock_ = true
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LeftBottom"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LeftWall/LeftWallCollider"]
 position = Vector2(-514, -622)
-polygon = PackedVector2Array(448, 450, 479, 508, 504, 576, 552, 640, 528, 656, 449, 546)
+polygon = PackedVector2Array(515, 606, 355, 526, 243, 398, 267, 182, 371, 118, 387, 14, 123, 14, 123, 606)
 
-[node name="RightBottom" type="StaticBody2D" parent="."]
-position = Vector2(744, 608)
+[node name="RightWall" type="Node2D" parent="."]
+
+[node name="RightWallTexture" type="TextureRect" parent="RightWall"]
+anchors_preset = -1
+anchor_left = 16.0
+anchor_right = 16.0
+offset_left = 640.0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("3_s8l56")
+metadata/_edit_use_anchors_ = true
+
+[node name="RightBottomCollider" type="StaticBody2D" parent="RightWall/RightWallTexture"]
+position = Vector2(104, 608)
 collision_layer = 3
 collision_mask = 0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RightBottom"]
-position = Vector2(347, 25)
-polygon = PackedVector2Array(-283, -185, -315, -113, -339, -57, -380, -9, -351, 18, -283, -81)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RightWall/RightWallTexture/RightBottomCollider"]
+polygon = PackedVector2Array(-56, -8, 112, -88, 208, -224, 192, -408, 96, -496, 64, -608, 264, -608, 256, -16)
 
-[node name="Anus" type="StaticBody2D" parent="."]
+[node name="Anus" type="Node2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Anus"]
+offset_left = 528.0
+offset_top = 528.0
+offset_right = 752.0
+offset_bottom = 723.0
+texture = ExtResource("5_t0bdx")
+
+[node name="TextureRect2" type="TextureRect" parent="Anus"]
+offset_left = 528.0
+offset_top = 576.0
+offset_right = 757.0
+offset_bottom = 681.0
+texture = ExtResource("6_aapi6")
+
+[node name="AnusCollider" type="StaticBody2D" parent="Anus"]
 position = Vector2(664, 648)
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Anus"]
-position = Vector2(0, 8)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Anus/AnusCollider"]
+position = Vector2(-24, -42)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_4tphv")
 
@@ -79,10 +95,7 @@ shape = SubResource("CapsuleShape2D_4tphv")
 position = Vector2(663, 657)
 
 [node name="ThePoop" parent="." instance=ExtResource("1_4fu6l")]
-position = Vector2(664, 160)
-
-[node name="Gas" parent="." instance=ExtResource("4_60dpx")]
-position = Vector2(667, 606)
+position = Vector2(640, 192)
 
 [node name="MiniPoopSpawn" type="ColorRect" parent="."]
 offset_left = 538.0

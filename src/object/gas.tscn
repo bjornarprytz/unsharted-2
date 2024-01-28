@@ -1,11 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://qgjhw8r2elro"]
+[gd_scene load_steps=3 format=3 uid="uid://qgjhw8r2elro"]
 
 [ext_resource type="Script" path="res://object/gas.gd" id="1_po5np"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s4dj0"]
 size = Vector2(680, 52.125)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_41ydv"]
 
 [node name="Gas" type="Area2D"]
 position = Vector2(585, 553)
@@ -19,7 +17,6 @@ position = Vector2(4, 5.0625)
 shape = SubResource("RectangleShape2D_s4dj0")
 
 [node name="Visual" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_41ydv")
 offset_left = -334.0
 offset_top = -21.0
 offset_right = 342.0
