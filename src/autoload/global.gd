@@ -14,6 +14,19 @@ signal ScoreUpdated(score: int)
 
 var gas_volume : float = 0.0
 
+@onready var effects : AudioStreamPlayer = $Effects
+
+@onready var much_sounds = [
+	preload("res://assets/audio/effects/munch_1.wav"),
+	preload("res://assets/audio/effects/munch_2.wav"),
+	preload("res://assets/audio/effects/munch_3.wav")
+]
+
+func munch_effect():
+	effects.pitch_scale = randf_range(0.9, 1.1)
+	effects.stream = much_sounds.pick_random()
+	effects.play()
+
 var score : int:
 	set(value):
 		if (score == value):

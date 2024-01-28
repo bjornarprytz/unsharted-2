@@ -10,3 +10,5 @@ script = ExtResource("1_ymp2p")
 stream = ExtResource("2_t85xl")
 volume_db = -15.0
 autoplay = true
+
+[node name="Effects" type="AudioStreamPlayer" parent="."]
