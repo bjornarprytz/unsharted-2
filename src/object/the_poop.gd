@@ -9,7 +9,7 @@ extends RigidBody2D
 const force : float = 1000.0
 
 var size: int = 0
-var target_scale : Vector2 = Vector2.ONE
+var target_scale: Vector2 = Vector2.ONE
 
 func _physics_process(delta):
 	animation.scale = animation.scale.move_toward(target_scale, delta)
@@ -23,7 +23,11 @@ func _physics_process(delta):
 		apply_force(Vector2.LEFT * force * delta)
 	if Input.is_action_pressed("right"):
 		apply_force(Vector2.RIGHT * force * delta)
-		
+	if Input.is_action_just_pressed("down"):
+		_smash()
+	if Input.is_action_just_released("down"):
+		_abort_smash()
+	
 	var bodies = get_colliding_bodies()
 	for b in bodies:
 		if b.name == "PlayerBarrier":
@@ -34,27 +38,38 @@ func _physics_process(delta):
 
 var smash_timer : SceneTreeTimer
 var aborted_smash : bool
+var smashing: bool
 
-func _input(event: InputEvent) -> void:
-	if (event is InputEventKey and event.keycode == KEY_S):
-		if event.is_pressed():
-			sleeping = true
-			var tween = create_tween()
-			tween.tween_property(self, "rotation", 0.0, 0.3)
-			animation.play("Windup"+_animation_postfix())
-			await animation.animation_finished
-			if aborted_smash:
-				aborted_smash = false
-				sleeping = false
-				return
-			apply_impulse(Vector2.DOWN * 20.0)
-			animation.play("Fall"+_animation_postfix())
-			await animation.animation_finished
-			Global.Fart.emit(linear_velocity.length())
-		else:
-			animation.stop()
-			aborted_smash = true
-			sleeping = false
+func _abort_smash():
+	animation.stop()
+	aborted_smash = true
+	smashing = false
+	sleeping = false
+
+func _smash() -> void:
+	if smashing:
+		return
+	smashing = true
+	aborted_smash = false
+	sleeping = true
+	
+	var tween = create_tween()
+	tween.tween_property(self, "rotation", 0.0, 0.3)
+	animation.play("Windup"+_animation_postfix())
+	await animation.animation_finished
+	if aborted_smash:
+		aborted_smash = false
+		smashing = false
+		sleeping = false
+		return
+	
+	apply_impulse(Vector2.DOWN * 20.0)
+	animation.play("Fall"+_animation_postfix())
+	await animation.animation_finished
+	
+	Global.Fart.emit(linear_velocity.length() + Global.gas_volume)
+	smashing = false
+	sleeping = false
 
 func _on_detection_area_area_entered(area: Area2D) -> void:
 	var thing = area.owner

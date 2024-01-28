@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c2mlb2ngd4rr0"]
+[gd_scene load_steps=20 format=3 uid="uid://c2mlb2ngd4rr0"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_307pf"]
 [ext_resource type="AudioStream" uid="uid://cy56exs2wvm8p" path="res://assets/audio/unsharted2.wav" id="2_15xlf"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://m0q5p6s7bwww" path="res://assets/keys/A_Key_Light.png" id="4_fs6yj"]
 [ext_resource type="Texture2D" uid="uid://bg6cma2jekwxe" path="res://assets/keys/Space_Key_Light.png" id="4_tdmsu"]
 [ext_resource type="Texture2D" uid="uid://btg6pf88hyrdc" path="res://assets/keys/D_Key_Light.png" id="5_0npd0"]
-[ext_resource type="Texture2D" uid="uid://d4hb7yloii2ku" path="res://assets/keys/S_Key_Light.png" id="5_hgoo0"]
 [ext_resource type="Texture2D" uid="uid://dpl7l5dxpj547" path="res://assets/spritemaps/smallidle.png" id="8_c2u7d"]
 [ext_resource type="Texture2D" uid="uid://bkjw8ojs10jfn" path="res://assets/spritemaps/T_poo_small_munch.png" id="8_luig8"]
 [ext_resource type="Texture2D" uid="uid://7tmasvgif5ux" path="res://assets/T_poo_chunk.png" id="9_ncj00"]
@@ -182,9 +181,9 @@ horizontal_alignment = 1
 [node name="HBoxContainer3" type="HBoxContainer" parent="UI/Controls"]
 layout_mode = 2
 
-[node name="S_key" type="TextureRect" parent="UI/Controls/HBoxContainer3"]
+[node name="Space_key" type="TextureRect" parent="UI/Controls/HBoxContainer3"]
 layout_mode = 2
-texture = ExtResource("5_hgoo0")
+texture = ExtResource("4_tdmsu")
 
 [node name="Label" type="Label" parent="UI/Controls/HBoxContainer3"]
 layout_mode = 2
