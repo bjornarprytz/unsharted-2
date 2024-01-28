@@ -20,7 +20,6 @@ func _on_body_entered(body):
 	if body.name == "ThePoop":
 		body.add_constant_force(Vector2.UP * bounce_force)
 
-
 func _on_body_exited(body):
 	if body.name == "ThePoop":
 		body.constant_force = Vector2.ZERO

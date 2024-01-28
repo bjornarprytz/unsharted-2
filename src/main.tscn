@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dyixng3tfgjn2"]
+[gd_scene load_steps=10 format=3 uid="uid://dyixng3tfgjn2"]
 
 [ext_resource type="PackedScene" uid="uid://dhgh2cea5xa1y" path="res://object/the_poop.tscn" id="1_4fu6l"]
 [ext_resource type="Script" path="res://main.gd" id="1_rtgrn"]
 [ext_resource type="Texture2D" uid="uid://d3u25a58keqjl" path="res://assets/background.png" id="2_ce6sq"]
+[ext_resource type="PackedScene" uid="uid://qgjhw8r2elro" path="res://object/gas.tscn" id="4_60dpx"]
 [ext_resource type="Script" path="res://object/PoopCounter.gd" id="5_ls5re"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i78he"]
@@ -79,6 +80,9 @@ position = Vector2(663, 657)
 
 [node name="ThePoop" parent="." instance=ExtResource("1_4fu6l")]
 position = Vector2(664, 160)
+
+[node name="Gas" parent="." instance=ExtResource("4_60dpx")]
+position = Vector2(667, 606)
 
 [node name="MiniPoopSpawn" type="ColorRect" parent="."]
 offset_left = 538.0
