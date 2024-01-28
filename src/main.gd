@@ -21,6 +21,7 @@ preload("res://assets/audio/650652__frenkfurth__wav-fart-vegan-005.wav")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.Fart.connect(fart)
+	Global.GameOver.connect(game_over)
 
 const spawn_interval : float = .69
 
@@ -50,9 +51,12 @@ func fart(magnitude: float):
 	
 	get_tree().call_group("MiniPoops", "flush")
 	if Global.gas_volume > 0:
-		Global.score += Global.gas_volume/10
+		Global.score += int(Global.gas_volume/10)
 	gas.deflate()
 	
 	await get_tree().create_timer(4.0).timeout
 	
 	anus.process_mode = Node.PROCESS_MODE_INHERIT
+
+func game_over(condition: int):
+	get_tree().change_scene_to_file("res://game_over_screen.tscn")

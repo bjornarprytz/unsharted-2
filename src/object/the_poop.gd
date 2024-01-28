@@ -6,7 +6,7 @@ extends RigidBody2D
 @onready var detection_shape : Node2D = $DetectionArea/Shape
 @onready var poop_shape : Node2D = $Shape
 
-const force : float = 3000.0
+const force : float = 1000.0
 
 var size: int = 0
 var target_scale: Vector2 = Vector2.ONE
@@ -20,13 +20,17 @@ func _physics_process(delta):
 		animation.play("Idle" + _animation_postfix())
 	
 	if Input.is_action_pressed("left"):
-		apply_force(Vector2.LEFT * force * delta)
+		apply_force(Vector2.LEFT * force)
 	if Input.is_action_pressed("right"):
-		apply_force(Vector2.RIGHT * force * delta)
+		apply_force(Vector2.RIGHT * force)
 	if Input.is_action_just_pressed("down"):
 		_smash()
-	if Input.is_action_just_released("down"):
+	if Input.is_action_just_released("down") and smashing:
 		_abort_smash()
+		
+	print(position.y)
+	if position.y > 800:
+		Global.GameOver.emit(GlobalSingleton.Outcome.Ejection)
 	
 	var bodies = get_colliding_bodies()
 	for b in bodies:
@@ -46,6 +50,8 @@ func _abort_smash():
 	smashing = false
 	sleeping = false
 	lock_rotation = false
+	await animation.animation_finished
+	animation.play("Idle" + _animation_postfix())
 
 func _smash() -> void:
 	if smashing:

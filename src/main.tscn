@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dhgh2cea5xa1y" path="res://object/the_poop.tscn" id="1_4fu6l"]
 [ext_resource type="Script" path="res://main.gd" id="1_rtgrn"]
-[ext_resource type="Texture2D" uid="uid://7gs0dhq24d35" path="res://assets/background_left_wall.png" id="2_lb2te"]
-[ext_resource type="Texture2D" uid="uid://uwh5gjf8v83w" path="res://assets/background_right_wall.png" id="3_s8l56"]
+[ext_resource type="Texture2D" uid="uid://4xdvy6tg7u4p" path="res://assets/background_left_wall.png" id="2_lb2te"]
+[ext_resource type="Texture2D" uid="uid://4bxprrgxhhki" path="res://assets/background_right_wall.png" id="3_s8l56"]
 [ext_resource type="PackedScene" uid="uid://qgjhw8r2elro" path="res://object/gas.tscn" id="4_60dpx"]
 [ext_resource type="Script" path="res://object/PoopCounter.gd" id="5_ls5re"]
 [ext_resource type="Texture2D" uid="uid://b2hluq4nbrt6v" path="res://assets/borthole_back.png" id="5_t0bdx"]
@@ -46,7 +46,7 @@ collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LeftWall/LeftWallCollider"]
 position = Vector2(-514, -622)
-polygon = PackedVector2Array(515, 606, 355, 526, 243, 398, 267, 182, 371, 118, 387, 14, 187, 14, 187, 606)
+polygon = PackedVector2Array(499, 606, 355, 526, 243, 398, 267, 182, 371, 118, 387, 14, 187, 14, 187, 606, 499, 734)
 
 [node name="RightWall" type="Node2D" parent="."]
 
@@ -66,23 +66,16 @@ collision_layer = 4
 collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RightWall/RightWallTexture/RightBottomCollider"]
-polygon = PackedVector2Array(-56, -8, 112, -88, 208, -224, 192, -408, 96, -496, 64, -608, 264, -608, 256, -16)
+polygon = PackedVector2Array(-32, -16, 112, -88, 208, -224, 192, -408, 96, -496, 64, -608, 264, -608, 256, -16, -32, 112)
 
 [node name="Anus" type="Node2D" parent="."]
 
-[node name="TextureRect" type="TextureRect" parent="Anus"]
+[node name="AnusBackTexture" type="TextureRect" parent="Anus"]
 offset_left = 528.0
 offset_top = 528.0
 offset_right = 752.0
 offset_bottom = 723.0
 texture = ExtResource("5_t0bdx")
-
-[node name="TextureRect2" type="TextureRect" parent="Anus"]
-offset_left = 528.0
-offset_top = 576.0
-offset_right = 757.0
-offset_bottom = 681.0
-texture = ExtResource("6_aapi6")
 
 [node name="AnusCollider" type="StaticBody2D" parent="Anus"]
 position = Vector2(664, 648)
@@ -99,6 +92,13 @@ position = Vector2(663, 657)
 
 [node name="ThePoop" parent="." instance=ExtResource("1_4fu6l")]
 position = Vector2(640, 192)
+
+[node name="AnusFrontTexture" type="TextureRect" parent="."]
+offset_left = 528.0
+offset_top = 576.0
+offset_right = 757.0
+offset_bottom = 681.0
+texture = ExtResource("6_aapi6")
 
 [node name="MiniPoopSpawn" type="ColorRect" parent="."]
 offset_left = 538.0
@@ -146,9 +146,9 @@ anchor_top = -0.248611
 anchor_right = 0.0171875
 anchor_bottom = -0.248611
 offset_left = 1088.0
-offset_top = 131.0
+offset_top = 135.0
 offset_right = 1258.0
-offset_bottom = 260.0
+offset_bottom = 264.0
 theme_override_fonts/font = ExtResource("8_cog0l")
 theme_override_font_sizes/font_size = 30
 text = "Score: 0"
