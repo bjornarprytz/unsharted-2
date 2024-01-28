@@ -1,3 +1,4 @@
+class_name MainPoop
 extends RigidBody2D
 
 @onready var detection_area : Area2D = $DetectionArea

@@ -54,3 +54,8 @@ func fart(magnitude: float):
 	await get_tree().create_timer(4.0).timeout
 	
 	anus.process_mode = Node.PROCESS_MODE_INHERIT
+
+
+func _on_the_outside_area_entered(area: Area2D) -> void:
+	if (area.owner is MainPoop):
+		Global.GameOver.emit(GlobalSingleton.Outcome.Ejection)
