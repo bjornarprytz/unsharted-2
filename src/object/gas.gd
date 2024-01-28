@@ -12,7 +12,7 @@ func _ready() -> void:
 
 func deflate():
 	var tween = create_tween()
-	tween.tween_property(self, "position:y", 1000.0, 2.0)
+	tween.tween_property(self, "position:y", 1000.0, 1.0)
 	await tween.finished
 	
 	_change_height(-visual.size.y)
